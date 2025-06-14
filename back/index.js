@@ -40,6 +40,9 @@ app.get('/',(req,res)=>{
     res.send("Getting Response 🔥")
     
 })
+// Add at top of your Express app
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 app.use('/bin',router)
 app.post('/upload', upload.single('image'), async (req, res) => {
   try {
