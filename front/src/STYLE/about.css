@@ -1,5 +1,5 @@
 .about-container {
-    width: 75vw;
+    width: 100vw;
     min-height: 85vh;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
 }
 
 .about-container .about {
-    width: 90vw;
+    width: 65vw;
     min-height: 50vh;
     background: rgb(0, 0, 0);
     color: rgba(255, 255, 255, 0.821);
