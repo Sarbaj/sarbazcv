@@ -49,7 +49,7 @@ useEffect(() => {
     });
   }, [projectData]);
 const Handleproject=()=>{
-  alert("Project Will Live Soon")
+  alert("Project Will Live in 2 Days")
 }
 
   return (
@@ -79,7 +79,7 @@ const Handleproject=()=>{
         </div>
     </div>
 
-    })):(<div>Project Will Live In 2Days </div>)}
+    })):(<div>Loading ....</div>)}
     
       
     </div>
