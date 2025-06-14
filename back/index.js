@@ -35,17 +35,9 @@ dotenv.config();
   },
  });
  const upload = multer({ storage: storage });
-app.get('/',async(req,res)=>{
-    try {
-        const Conn=await connect("mongodb+srv://sarbajmalek3456:ELON_MUSK2499@cluster0.xyevmbo.mongodb.net/cvbackend")
-        if (Conn) {
-            console.log(`✅ Database Connected: ${Conn.connection.host}`);
-            res.send("Getting Response 🔥")
-        }
-            
-        } catch (error) {   
-            console.error('error on connection');
-        }
+app.get('/',(req,res)=>{
+    res.send("Getting Response 🔥")
+    
 })
 app.use('/bin',router)
 app.post('/upload', upload.single('image'), async (req, res) => {
