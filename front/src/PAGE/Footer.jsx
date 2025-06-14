@@ -21,6 +21,10 @@ const Footer = () => {
               <a href="https://github.com" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
             </div>
+             <div className="footer-left">
+              <p>📞 +91 81418 75116</p>
+              <p>📧 sarbajmalek3456@gmail.com</p>
+            </div>
           </footer></>
   )
 }
