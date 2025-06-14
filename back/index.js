@@ -1,9 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import router from './routes/Router.js';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+
 import DbConnection from './DB/Db.js';
 import cors from 'cors';
  import mongoose from 'mongoose';
@@ -13,12 +11,7 @@ import cors from 'cors';
 import { Item } from './model/AllModel.js';
 const app=express()
 app.use(express.json());
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-app.use(express.static(path.join(__dirname, 'client/build')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build/index.html'));
-});
+
 app.use(cors( {
   origin: ['https://sarbazcv.vercel.app'], 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
