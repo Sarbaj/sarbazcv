@@ -9,7 +9,7 @@ const Work = () => {
   const [projectData, setprojectData] = useState([])
   const FetchProduct=async()=>{
     try{
-     const response = await fetch('http://localhost:5050/bin/getproject', {
+     const response = await fetch('https://sarbazcv-icai.vercel.app/bin/getproject', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -18,8 +18,10 @@ const Work = () => {
     const data=await response.json()
     
    console.log(data);
-   
-      setprojectData(data.messege)
+   if (data.messege.length>0) {
+    
+       setprojectData(data.messege)
+   }
     
     }
     catch(err){
