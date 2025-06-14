@@ -9,7 +9,7 @@ const Work = () => {
   const [projectData, setprojectData] = useState([])
   const FetchProduct=async()=>{
     try{
-     const response = await fetch('https://sarbazcv-icai.vercel.app/bin/getproject', {
+     const response = await fetch('https://sarbazcvbackend.vercel.app/bin/getproject', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
