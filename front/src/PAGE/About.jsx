@@ -3,8 +3,8 @@ import '../STYLE/about.css';
 const About = () => {
   return (
     <>
-    <div className="about-container">
       <center>
+    <div className="about-container">
 
         <h1>Hi, I'm Sarbaz Malek</h1>
         <div className="about">
@@ -29,8 +29,8 @@ What drives me is solving real problems with clean, scalable code. I believe gre
               <p>2022-2024</p>
             </div>
         </div>
-      </center>
     </div>
+      </center>
     </>
   )
 }
