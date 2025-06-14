@@ -13,7 +13,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    alert("Project Is Under Maintenance.Sorry For That 🙇. Will Back Soon 🔥🤝")
+  
     gsap.fromTo(
       Navref.current,
       { y: -200, opacity: 0 },

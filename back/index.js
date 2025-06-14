@@ -35,7 +35,7 @@ dotenv.config();
   },
  });
  const upload = multer({ storage: storage });
-  DbConnection()
+DbConnection()
 app.get('/',(req,res)=>{
     res.send("Getting Response 🔥")
     
