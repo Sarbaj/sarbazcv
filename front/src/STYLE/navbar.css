@@ -128,6 +128,7 @@
   font-size: 1.8rem;
   cursor: pointer;
   color: black;
+  z-index: 20;
 }
 
 /* Make navbar responsive */
