@@ -14,7 +14,7 @@ router.post("/getUsername",async(req,res)=>{
     const token=req.body.token
    try {
           const payload = jwt.verify(token, JWT_SECRET);
-          console.log('Payload:', payload);
+      
           const existingUser = await User.findOne({ email:payload.email });
           const Info={
             _id:existingUser._id,
@@ -121,8 +121,9 @@ router.get("/getproject", async (req, res) => {
   try {
 
     const products = await Item.find(); 
-    if (products) {
-        console.log(products);
+    if (!products) {
+        return res.status(400).json({ message: 'Data Not Fetched' });
+        
     }
     return res.status(200).json({ message: 'Data fetched successfully', messege:products });
   

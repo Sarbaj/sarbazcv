@@ -63,8 +63,5 @@ app.post('/upload', upload.single('image'), async (req, res) => {
   res.status(500).json({ message: 'Server error', error: error.message });
   }
  });
-app.listen(PORT,()=>{
-    DbConnection()
-    console.log(`Server Running On ${PORT} PORT `);
-})
+
 

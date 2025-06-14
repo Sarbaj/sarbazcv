@@ -17,7 +17,7 @@ const Work = () => {
         });
     const data=await response.json()
     
-   console.log(data);
+
    if (data.messege.length>0) {
     
        setprojectData(data.messege)
@@ -62,7 +62,7 @@ const Handleproject=()=>{
     {projectData.length>0 ?(projectData.map((data,i)=>{
     const stringArray = data.speciality.split(',');
   const trimmedArray = stringArray.map(item => item.trim());
-  console.log(trimmedArray);
+  
   
     return <div className="project-div" key={i} >
         <div className="project-display">
