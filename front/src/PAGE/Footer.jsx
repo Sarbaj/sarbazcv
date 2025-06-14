@@ -6,10 +6,7 @@ const Footer = () => {
   return (
     <>
      <footer className="contact-footer">
-            <div className="footer-left">
-              <p>📞 +91 81418 75116</p>
-              <p>📧 sarbajmalek3456@gmail.com</p>
-            </div>
+         
             <div className="footer-center">
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
