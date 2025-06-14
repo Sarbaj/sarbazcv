@@ -4,6 +4,8 @@ const About = () => {
   return (
     <>
     <div className="about-container">
+      <center>
+
         <h1>Hi, I'm Sarbaz Malek</h1>
         <div className="about">
             <h1>About</h1>
@@ -27,6 +29,7 @@ What drives me is solving real problems with clean, scalable code. I believe gre
               <p>2022-2024</p>
             </div>
         </div>
+      </center>
     </div>
     </>
   )
