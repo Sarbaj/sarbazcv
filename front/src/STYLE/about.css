@@ -55,6 +55,7 @@
     }
 
     .about-container .about {
+          width: 85vw;
         min-height: auto; /* Make section height fluid */
         padding: 1.5rem;
     }
@@ -71,6 +72,7 @@
     }
 
     .about-container .about {
+          width: 65vw;
         padding: 1rem;
     }
 
