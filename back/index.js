@@ -36,7 +36,7 @@ dotenv.config();
  });
  const upload = multer({ storage: storage });
 app.get('/',(req,res)=>{
-    res.send("Getting Response")
+    res.send("Getting Response 🔥")
     
 })
 app.use('/bin',router)
