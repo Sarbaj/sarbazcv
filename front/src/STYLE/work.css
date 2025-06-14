@@ -1,92 +1,162 @@
-.work-main{
-    width: 100vw;
-    min-height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 6rem 0;
-    overflow-x: hidden;
+.work-main {
+  width: 100vw;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 1rem;
+  overflow-x: hidden;
 }
-.work-main p:first-child{
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 1.6rem;
-}
-.work-main h1{
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2.2rem;
-    margin-bottom: 5rem;
-}
-.work-main .project-flex{
-    width: 60vw;
-    min-height: 100vh;
-}
-.work-main .project-div{
-    width: 60vw;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-}
-.work-main .project-div .project-display{
-    background: black;
-    width: 100%;
-    height: 33rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    overflow: hidden;
-}
-.work-main .project-div .project-display img{
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
 
+.work-main p:first-child {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.4rem;
+  text-align: center;
 }
-.work-main .project-div p{
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+
+.work-main h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.work-main .project-flex {
+  width: 90vw;
+  min-height: auto;
+}
+
+.work-main .project-div {
+  width: 100%;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.work-main .project-div .project-display {
+  background: black;
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.work-main .project-div .project-display img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.work-main .project-div p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.work-main .project-div h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.work-main .project-div .btn-info {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.work-main .project-div .btn-info button {
+  padding: 6px 15px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.work-main .project-div .btn-info button:nth-child(1) {
+  border: 1px solid rgb(144, 192, 203);
+  background: rgb(203, 222, 223);
+  color: rgb(65, 190, 175);
+}
+
+.work-main .project-div .btn-info button:nth-child(2) {
+  border: 1px solid rgb(144, 145, 203);
+  background: rgb(203, 206, 223);
+  color: rgb(65, 94, 190);
+}
+
+.work-main .project-div .btn-info button:nth-child(3) {
+  border: 1px solid rgb(194, 144, 203);
+  background: rgb(221, 203, 223);
+  color: rgb(186, 65, 190);
+}
+
+/* 🔽 Responsive Breakpoints */
+@media (max-width: 768px) {
+  .work-main {
+    padding: 4rem 1rem;
+  }
+
+  .work-main h1 {
+    font-size: 1.6rem;
+  }
+
+  .work-main p:first-child {
     font-size: 1.2rem;
-   
+  }
+
+  .work-main .project-div .project-display {
+    height: 18rem;
+  }
+
+  .work-main .project-div h2 {
+    font-size: 1.4rem;
+  }
+
+  .work-main .project-div p {
+    font-size: 0.95rem;
+  }
+
+  .work-main .project-div .btn-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work-main .project-div .btn-info button {
+    width: 80%;
+    text-align: center;
+  }
 }
-.work-main .project-div h2{
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 1.8rem;
-}
-.work-main .project-div .btn-info{
-    position: relative;
-    margin-top: 1rem;
-    width: 60%;
-    display: flex;
-    gap: 2rem;
-}
-.work-main .project-div .btn-info button:nth-child(1){
-    padding: 4px 15px;
-    border-radius: 6px;
-    border: 1px solid rgb(144, 192, 203);
-    background: rgb(203, 222, 223);
-    color: rgb(65, 190, 175);
-}
-.work-main .project-div .btn-info button:nth-child(2){
-    padding: 4px 15px;
-    border-radius: 6px;
-    border: 1px solid rgb(144, 145, 203);
-    background: rgb(203, 206, 223);
-    color: rgb(65, 94, 190);
-}
-.work-main .project-div .btn-info button:nth-child(3){
-    padding: 4px 15px;
-    border-radius: 6px;
-    border: 1px solid rgb(194, 144, 203);
-    background: rgb(221, 203, 223);
-    color: rgb(186, 65, 190);
+
+@media (max-width: 480px) {
+  .work-main h1 {
+    font-size: 1.4rem;
+  }
+
+  .work-main p:first-child {
+    font-size: 1rem;
+  }
+
+  .work-main .project-div .project-display {
+    height: 14rem;
+  }
+
+  .work-main .project-div .btn-info button {
+    font-size: 0.9rem;
+    padding: 5px 12px;
+  }
 }
