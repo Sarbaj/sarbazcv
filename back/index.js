@@ -13,7 +13,7 @@ const app=express()
 app.use(express.json());
 
 app.use(cors( {
-  origin: ['https://sarbazcv.vercel.app'], 
+  origin: ['https://sarbaz.vercel.app'], 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, 
   optionsSuccessStatus: 204
