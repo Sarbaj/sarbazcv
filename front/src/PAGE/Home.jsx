@@ -4,6 +4,7 @@ import Work from './Work';
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Services from './Service';
 gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
   const headingRef = useRef(null);
@@ -47,7 +48,7 @@ const Home = () => {
 </div>
 
       <Work/>
-      
+      <Services/>
     </>
   )
 }
