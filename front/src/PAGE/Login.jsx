@@ -8,7 +8,7 @@ const Login = () => {
   
     async function Sendlogin(email, password) {
     try {
-        const response = await fetch('resume-roan-eight.vercel.app/bin/login', {
+        const response = await fetch('https://sarbazcvbackend.vercel.app/bin/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ const Login = () => {
         localStorage.setItem('authToken', data.token);
 
         // Redirect to the main page
-        window.location.href = '/'; // Change this to your main page URL
+        window.location.href = '/addproject'; // Change this to your main page URL
 
     } catch (error) {
         console.error('Error during login:', error);
