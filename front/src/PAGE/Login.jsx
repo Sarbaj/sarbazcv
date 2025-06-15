@@ -63,7 +63,7 @@ const Login = () => {
       </div>
       
     </div>
-<ToastContainer position="top-center"
+<ToastContainer style={{zIndex:200}} position="top-right"
      autoClose={2000} theme="dark" pauseOnHover={false}/>
      </>
   )
