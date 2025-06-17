@@ -51,8 +51,8 @@
 
 .work-main .project-div .project-display img {
   width: 100%;
- 
-  object-fit: cover;
+  height: 140%;
+  object-fit: contain;
   border-radius: 8px;
 }
 
