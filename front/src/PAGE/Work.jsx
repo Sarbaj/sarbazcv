@@ -69,9 +69,9 @@ const Handleproject=()=>{
         <div className="project-display">
             <img ref={imageRef}  src={data.imageUrl} alt="project img" />
         </div>
-        
+
         <h2>{data.name}</h2>
-        <a onClick={Handleproject} style={{textDecoration:"none",color:"black",cursor:"pointer"}}>Live Demo <FaLink /></a>
+        <a onClick={Handleproject} style={{textDecoration:"none",color:"black",cursor:"pointer",fontWeight: "500"}}>Live Demo <FaLink /></a>
         <p>{data.description}</p>
         <div className="btn-info">
           {trimmedArray.length>0 && (trimmedArray.map((data,i)=>{

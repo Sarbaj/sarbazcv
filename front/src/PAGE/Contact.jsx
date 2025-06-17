@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+
 import '../STYLE/contact.css';
 
 const Contact = () => {
+  const HandleSendmsg=()=>{
+toast.success("Thanks For Connecting.")
+  }
   return (
     <>
     <div className="contact-page">
@@ -13,13 +17,15 @@ const Contact = () => {
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
           <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
+          <button type="submit" onClick={HandleSendmsg}>Send Message</button>
         </form>
       </section>
 
       
     </div>
-   
+   <ToastContainer style={{zIndex:200}} position="top-right"
+     autoClose={2000} theme="dark" pauseOnHover={false}/>
+     
     </>
   );
 };
