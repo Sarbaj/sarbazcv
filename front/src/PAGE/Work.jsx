@@ -50,7 +50,7 @@ useEffect(() => {
     });
   }, [projectData]);
 const Handleproject=()=>{
-  alert("Project Will Live in 2 Days")
+  alert("Project Is Under Maintenance. Will Be Live in 2 Days")
 }
 
   return (
