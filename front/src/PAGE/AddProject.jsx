@@ -23,7 +23,7 @@ const AddProject = () => {
     formData.append('link', link);
     
     try {
-    const response = await axios.post('resume-roan-eight.vercel.app/upload', formData, {
+    const response = await axios.post('https://sarbazcvbackend.vercel.app/upload', formData, {
     headers: {
     'Content-Type': 'multipart/form-data',
     },
@@ -61,13 +61,7 @@ const AddProject = () => {
           onChange={(e) => setSpecialty(e.target.value)}
           required
         />
-         <label>Project link</label>
-        <input
-          type="text"
-          value={specialty}
-          onChange={(e) => setLink(e.target.value)}
-          required
-        />
+        
 
         <label>Upload File:</label>
         <input type="file" onChange={handleFileChange} required />
