@@ -30,7 +30,7 @@
 }
 
 .work-main .project-div {
-  width: 100%;
+  width: 90vw;
   min-height: auto;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@
 
 .work-main .project-div .project-display {
   background: black;
-  width: 100%;
+  width: 80vw;
   height: 25rem;
   display: flex;
   justify-content: center;
@@ -50,7 +50,7 @@
 }
 
 .work-main .project-div .project-display img {
-  width: 100%;
+  width: 90vw;
   height: 140%;
   object-fit: contain;
   border-radius: 8px;
