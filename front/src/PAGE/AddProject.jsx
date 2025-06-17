@@ -61,7 +61,13 @@ const AddProject = () => {
           onChange={(e) => setSpecialty(e.target.value)}
           required
         />
-        
+         <label>Project link</label>
+        <input
+          type="text"
+          value={link}
+          onChange={(e) => setLink(e.target.value)}
+          required
+        />
 
         <label>Upload File:</label>
         <input type="file" onChange={handleFileChange} required />

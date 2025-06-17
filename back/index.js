@@ -56,6 +56,7 @@ app.post('/upload', upload.single('image'), async (req, res) => {
   imageUrl: req.file.path,
   description:req.body.description,
   speciality:req.body.speciality,
+  link:req.body.link
    // URL of the uploaded image
   });
  
