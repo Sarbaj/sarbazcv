@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../STYLE/work.css';
 import { useEffect,useRef  } from 'react';
+import { FaLink } from "react-icons/fa";
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import AI from '../assets/AI.png';
@@ -69,7 +70,7 @@ const Handleproject=()=>{
             <img ref={imageRef}  src={data.imageUrl} alt="project img" />
         </div>
         <h2>{data.name}</h2>
-        <a onClick={Handleproject} style={{background:"black",padding:"8px 15px",width:"8rem",textDecoration:"none",color:"white",borderRadius:"8px",cursor:"pointer"}}>Live Demo</a>
+        <a onClick={Handleproject} style={{textDecoration:"none",color:"black",cursor:"pointer"}}>Live Demo <FaLink /></a>
         <p>{data.description}</p>
         <div className="btn-info">
           {trimmedArray.length>0 && (trimmedArray.map((data,i)=>{
