@@ -60,7 +60,6 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 1rem;
- 
   margin-bottom: 0.5rem;
 }
 
@@ -80,6 +79,7 @@
 }
 
 .work-main .project-div .btn-info button {
+  cursor: not-allowed;
   padding: 6px 15px;
   border-radius: 6px;
   font-size: 0.95rem;
