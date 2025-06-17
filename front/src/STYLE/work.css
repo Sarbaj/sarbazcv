@@ -30,10 +30,11 @@
 }
 
 .work-main .project-div {
-  width: 90vw;
+  width: 100vw;
   min-height: auto;
   display: flex;
-  justify-content: center;
+
+  align-items: center;
   flex-direction: column;
   margin-top: 1rem;
 }
