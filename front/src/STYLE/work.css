@@ -134,6 +134,7 @@
   .work-main .project-div .btn-info {
     flex-direction: column;
     align-items: center;
+    gap: 0.3rem;
   }
 
   .work-main .project-div .btn-info button {
@@ -149,6 +150,9 @@
 
   .work-main p:first-child {
     font-size: 1rem;
+  }
+  .work-main .project-div .btn-info {
+    gap: 0.3rem;
   }
 
   .work-main .project-div .project-display {
