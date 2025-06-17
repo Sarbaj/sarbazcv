@@ -10,6 +10,9 @@ const Contact = () => {
   const [message, setMessage] = useState("")
   const HandleSendmsg=(e)=>{
     e.preventDefault()
+    setEmail("")
+    setMessage("")
+    setUsername("")
 toast.success("Thanks For Connecting.")
   }
   return (
