@@ -54,7 +54,9 @@ const Handleproject=(e,i)=>{
   if (i==1) {
     window.location.href="https://github.com/Sarbaj/AI_VIVA.git"
   }
-  alert("Project Is Under Maintenance. Will Be Live in 2 Days")
+  else{
+    alert("Project Is Under Maintenance. Will Be Live in 2 Days")
+  }
 }
 
   return (
