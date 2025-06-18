@@ -49,8 +49,11 @@ useEffect(() => {
       });
     });
   }, [projectData]);
-const Handleproject=()=>{
-  alert("Project Is Under Maintenance. Will Be Live in 2 Days")
+const Handleproject=(e,i)=>{
+  e.preventDefault()
+  if (i==1) {
+    alert("Project Is Under Maintenance. Will Be Live in 2 Days")
+  }
 }
 
   return (
@@ -71,7 +74,7 @@ const Handleproject=()=>{
         </div>
 
         <h2>{data.name}</h2>
-        <a onClick={Handleproject} style={{textDecoration:"none",color:"black",cursor:"pointer",fontWeight: "500"}}>Live Demo <FaLink /></a>
+        <a onClick={(e)=>Handleproject(e,i)} style={{textDecoration:"none",color:"black",cursor:"pointer",fontWeight: "500"}}>Live Demo <FaLink /></a>
         <p>{data.description}</p>
         <div className="btn-info">
           {trimmedArray.length>0 && (trimmedArray.map((data,i)=>{
