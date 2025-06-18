@@ -52,8 +52,9 @@ useEffect(() => {
 const Handleproject=(e,i)=>{
   e.preventDefault()
   if (i==1) {
-    alert("Project Is Under Maintenance. Will Be Live in 2 Days")
+    window.location.href="https://github.com/Sarbaj/AI_VIVA.git"
   }
+  alert("Project Is Under Maintenance. Will Be Live in 2 Days")
 }
 
   return (
