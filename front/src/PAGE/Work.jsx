@@ -49,13 +49,13 @@ useEffect(() => {
       });
     });
   }, [projectData]);
-const Handleproject=(e,i)=>{
+const Handleproject=(e,i,data)=>{
   e.preventDefault()
-  if (i==1) {
-    window.location.href="https://github.com/Sarbaj/AI_VIVA.git"
+  if (i==2) {
+    alert("Project Is Under Maintenance. Will Be Live in 2 Days")
   }
   else{
-    alert("Project Is Under Maintenance. Will Be Live in 2 Days")
+    window.location.href=data.link
   }
 }
 
@@ -77,7 +77,7 @@ const Handleproject=(e,i)=>{
         </div>
 
         <h2>{data.name}</h2>
-        <a onClick={(e)=>Handleproject(e,i)} style={{textDecoration:"none",color:"black",cursor:"pointer",fontWeight: "500"}}>Live Demo <FaLink /></a>
+        <a onClick={(e)=>Handleproject(e,i,data)} style={{textDecoration:"none",color:"black",cursor:"pointer",fontWeight: "500"}}>Live Demo <FaLink /></a>
         <p>{data.description}</p>
         <div className="btn-info">
           {trimmedArray.length>0 && (trimmedArray.map((data,i)=>{
