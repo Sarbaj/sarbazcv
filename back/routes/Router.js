@@ -181,7 +181,7 @@ router.post("/getverified",async(req,res)=>{
   }
    try {
           const payload = jwt.verify(token, JWT_SECRET);
-          const user = await User.findOne({ email:payload.email });
+          const user = await User.find({ email:payload.email });
           if (!user) {
             return res.status(400).json({ message: 'Token invalid'});
           }
