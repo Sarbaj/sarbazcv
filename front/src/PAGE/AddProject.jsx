@@ -41,8 +41,9 @@ const AddProject = () => {
     
 
    if (data.messege.length>0) {
-    
        setContactdata(data.messege)
+       console.log(data.messege);
+       
    }
 
 
