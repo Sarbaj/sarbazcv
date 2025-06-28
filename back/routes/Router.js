@@ -133,6 +133,26 @@ router.get("/getproject", async (req, res) => {
     return res.status(500).json({ message: 'Server error', error: err.message });
   }
 });
+router.post("/contact", async (req, res) => {
+  const{name,email,messege}=req.body
+  console.log(name,email,messege);
+  
+  try {
+    if(!name ||!email || !messege){
+      return res.status(500).json({message:"All Field Are Requiered"})
+    }
+     const newmessage = new ContactModel({
+      name,
+      email,
+      messsage:messege,
+    });
+    await newmessage.save();
+    return res.status(201).json({message:"Thanks For Connecting 🤝!!"})
+  } catch (err) {
+    console.error("Error in fetch:", err);
+    return res.status(500).json({ message: 'Something Went Wrong', error: err.message });
+  }
+});
 
 
 

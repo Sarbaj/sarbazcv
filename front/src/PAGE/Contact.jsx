@@ -8,12 +8,26 @@ const Contact = () => {
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
-  const HandleSendmsg=(e)=>{
+  const HandleSendmsg=async(e)=>{
     e.preventDefault()
+       const response = await fetch('https://sarbazcvbackend.vercel.app/bin/contact', {
+               method: 'POST',
+               headers: {
+                   'Content-Type': 'application/json'
+               },
+               body: JSON.stringify({ name:username, email:email,messege:message })
+           });
+           if (response.status==201) {
+             toast.success("Thanks For Connecting.")
+           }
+           if (!response.ok) {
+               const errorData = await response.json();
+               toast.error(errorData.message)
+               
+              }
     setEmail("")
     setMessage("")
     setUsername("")
-toast.success("Thanks For Connecting.")
   }
   return (
     <>
