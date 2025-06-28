@@ -31,7 +31,7 @@ const AddProject = () => {
     },
     });
     
-     const responsecontact = await fetch('https://sarbazcvbackend.vercel.app/bin/getproject', {
+     const responsecontact = await fetch('https://sarbazcvbackend.vercel.app/bin/contactdetail', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
