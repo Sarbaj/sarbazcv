@@ -107,6 +107,7 @@ router.post("/login", async (req, res) => {
       { expiresIn: "7d" }
     );
 
+      localStorage.setItem("cvToken",token)
       return res.json({
         token,
         messege: `Login success as admin and mail is ${user.email}`,
@@ -172,5 +173,20 @@ router.get("/contactdetail", async (req, res) => {
   }
 });
 
+router.post("/getverified",async(req,res)=>{
+    const {token}=req.body
+
+  if (!token) {
+    return res.status(400).json({ message: "Token is required" });
+  }
+   try {
+          const payload = jwt.verify(token, JWT_SECRET);
+          
+         return res.status(200).send({ message: 'Token valid', payload:Info});
+    } catch{
+        console.log("Token expired");
+        
+    }
+})
 
 export default router;

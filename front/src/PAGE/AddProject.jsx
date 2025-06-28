@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../STYLE/addproject.css";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 const AddProject = () => {
   const [projectName, setProjectName] = useState("");
@@ -9,7 +10,7 @@ const AddProject = () => {
   const [link, setLink] = useState("");
   const [file, setFile] = useState(null);
   const [contactdata, setContactdata] = useState([]);
-  
+  const navigate = useNavigate();
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -67,6 +68,38 @@ useEffect(() => {
     
     }
   };
+ useEffect(() => {
+    const verifyToken = async () => {
+      const token =localStorage.getItem("cvToken");
+      if (!token) {
+        navigate('/bin/auth/login');
+      }
+      try {
+        
+        const response = await fetch("https://vivabackend.onrender.com/bin/getverified", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token }),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          setErrorlogin(errorData.message);
+        }
+        const data = await response.json();
+     if (data.status !== 200 || !data.data.payload) {
+          navigate('/bin/auth/login');
+        }
+     
+        
+      } catch (error) {
+        console.log("error");
+      }
+    };
+    verifyToken();
+  }, [],);
 
   return <>
     <div className="add-project">
