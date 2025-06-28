@@ -155,5 +155,22 @@ router.post("/contact", async (req, res) => {
 });
 
 
+router.get("/contactdetail", async (req, res) => {
+  try {
+
+    const contactdetail = await ContactModel.find(); 
+    if (!contactdetail) {
+        return res.status(400).json({ message: 'There Are No Messege' });
+        
+    }
+    return res.status(200).json({ message: 'Data fetched successfully', messege:contactdetail });
+  
+    
+  } catch (err) {
+    console.error("Error in fetch:", err);
+    return res.status(500).json({ message: 'Server error', error: err.message });
+  }
+});
+
 
 export default router;

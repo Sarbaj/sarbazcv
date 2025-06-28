@@ -7,6 +7,8 @@ const AddProject = () => {
   const [specialty, setSpecialty] = useState("");
   const [link, setLink] = useState("");
   const [file, setFile] = useState(null);
+  const [contactdata, setContactdata] = useState([]);
+  
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -29,6 +31,21 @@ const AddProject = () => {
     },
     });
     
+     const responsecontact = await fetch('https://sarbazcvbackend.vercel.app/bin/getproject', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+    const data=await responsecontact.json()
+    
+
+   if (data.messege.length>0) {
+    
+       setContactdata(data.messege)
+   }
+
+
     } catch (error) {
     console.error('Upload error:', error);
     
@@ -76,13 +93,22 @@ const AddProject = () => {
       </form>
     </div>
      <div style={{ backgroundColor: '#f2f2f2', minHeight: '100vh', padding: '1rem' }}>
+      {contactdata.length>0 ?(contactdata.map((data)=>{
+return <>
        <div className="message-card">
-      <h2 className="message-name">Sarbaz</h2>
-      <p className="message-email">📧 Sarbax@gmail.com</p>
+      <h2 className="message-name">{data.name}</h2>
+      <p className="message-email">📧 {data.email}</p>
       <div className="message-text">
-        <p>this ii soart where messge s disfhsefkjshf sj</p>
+        <p>{data.messsage}</p>
       </div>
     </div>
+      </>
+      })):(<>
+      <div className="message-card">
+      <h2 className="message-name">No Messege Are There</h2>
+      </div>
+      </>)}
+      
      </div>
           </>
   
