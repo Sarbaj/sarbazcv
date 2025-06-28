@@ -86,9 +86,9 @@ useEffect(() => {
 
         const data = await response.json();
       
-     if (data.status !== 200 || !data.payload) {
+     if (response.status !== 200) {
           navigate('/bin/auth/login');
-          alert(response.status);
+        
         }
       } catch (error) {
         navigate('/bin/auth/login');
