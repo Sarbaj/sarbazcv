@@ -85,11 +85,12 @@ useEffect(() => {
         });
 
         const data = await response.json();
-      
+      if (!data.data.payload.Usernname=='SarbazKhan') {
+        
+      }
      if (data.status !== 200 || !data.data.payload) {
           navigate('/bin/auth/login');
         }
-     
         
       } catch (error) {
         
