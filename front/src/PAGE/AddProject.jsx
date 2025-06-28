@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../STYLE/addproject.css";
 import axios from 'axios';
+import { useEffect } from "react";
 const AddProject = () => {
   const [projectName, setProjectName] = useState("");
   const [description, setDescription] = useState("");
@@ -13,6 +14,34 @@ const AddProject = () => {
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
+
+
+  const FuncContac=async()=>{
+      try {
+           const responsecontact = await fetch('https://sarbazcvbackend.vercel.app/bin/contactdetail', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+    const data=await responsecontact.json()
+    
+
+   if (data.messege.length>0) {
+       setContactdata(data.messege)
+       console.log(data.messege);
+       
+   }
+      } catch (error) {
+         console.error('Upload error:', error);
+      }
+  }
+useEffect(() => {
+  
+  FuncContac()
+
+}, [])
+
 
   const handleSubmit = async(event) => {
     event.preventDefault();
@@ -31,20 +60,6 @@ const AddProject = () => {
     },
     });
     
-     const responsecontact = await fetch('https://sarbazcvbackend.vercel.app/bin/contactdetail', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        });
-    const data=await responsecontact.json()
-    
-
-   if (data.messege.length>0) {
-       setContactdata(data.messege)
-       console.log(data.messege);
-       
-   }
 
 
     } catch (error) {
