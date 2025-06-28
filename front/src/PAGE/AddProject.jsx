@@ -88,7 +88,7 @@ useEffect(() => {
       
      if (data.status !== 200) {
           navigate('/bin/auth/login');
-          alert("Not 202");
+          alert(data.status);
         }
       } catch (error) {
         navigate('/bin/auth/login');
