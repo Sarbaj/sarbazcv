@@ -183,9 +183,9 @@ router.post("/getverified",async(req,res)=>{
           const payload = jwt.verify(token, JWT_SECRET);
           const user = await User.findOne({ email:payload.email });
           if (!user) {
-            return res.status(400).send({ message: 'Token invalid'});
+            return res.status(400).json({ message: 'Token invalid'});
           }
-          return res.status(200).send({ message: 'Token valid', payload:user});
+          return res.status(200).json({ message: 'Token valid', payload:user});
     } catch{
         console.log("Token expired");
         
