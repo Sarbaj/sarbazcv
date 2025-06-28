@@ -88,11 +88,14 @@ useEffect(() => {
       
      if (data.status !== 200 || !data.data.payload) {
           navigate('/bin/auth/login');
+          console.log("Not 202");
+          
         }
         
       } catch (error) {
-        
         navigate('/bin/auth/login');
+        console.log("eror");
+        
       }
     };
     verifyToken();

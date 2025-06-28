@@ -185,7 +185,7 @@ router.post("/getverified",async(req,res)=>{
           if (!user) {
             return res.status(400).send({ message: 'Token invalid'});
           }
-          return res.status(200).send({ message: 'Token valid', payload:payload});
+          return res.status(200).send({ message: 'Token valid', payload:user});
     } catch{
         console.log("Token expired");
         
