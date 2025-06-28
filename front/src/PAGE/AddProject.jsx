@@ -86,14 +86,13 @@ useEffect(() => {
 
         const data = await response.json();
       
-     if (data.status !== 200 || !data.data.payload) {
+     if (data.status !== 200) {
           navigate('/bin/auth/login');
-          aleart("Not 202");
+          alert("Not 202");
         }
       } catch (error) {
         navigate('/bin/auth/login');
-        console.log("eror");
-        aleart("error")
+       
       }
     };
     verifyToken();
