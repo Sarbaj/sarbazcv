@@ -84,10 +84,6 @@ useEffect(() => {
           body: JSON.stringify({ token }),
         });
 
-        if (!response.ok) {
-          const errorData = await response.json();
-          setErrorlogin(errorData.message);
-        }
         const data = await response.json();
      if (data.status !== 200 || !data.data.payload) {
           navigate('/bin/auth/login');

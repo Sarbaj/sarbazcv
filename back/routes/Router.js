@@ -181,8 +181,7 @@ router.post("/getverified",async(req,res)=>{
   }
    try {
           const payload = jwt.verify(token, JWT_SECRET);
-          
-         return res.status(200).send({ message: 'Token valid', payload:Info});
+         return res.status(200).send({ message: 'Token valid', payload:payload});
     } catch{
         console.log("Token expired");
         
