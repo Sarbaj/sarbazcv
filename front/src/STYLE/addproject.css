@@ -40,3 +40,61 @@ button {
 button:hover {
   background-color: rgba(33, 32, 32, 0.707);
 }
+.message-card {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e2e2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: box-shadow 0.3s ease;
+}
+
+.message-card:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.message-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 6px;
+}
+
+.message-email {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  margin-bottom: 14px;
+  word-break: break-word;
+}
+
+.message-text {
+  font-size: 1rem;
+  color: #34495e;
+  line-height: 1.5;
+  border-top: 1px solid #ddd;
+  padding-top: 12px;
+  word-wrap: break-word;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .message-card {
+    padding: 16px;
+  }
+
+  .message-name {
+    font-size: 1.3rem;
+  }
+
+  .message-email {
+    font-size: 0.85rem;
+  }
+
+  .message-text {
+    font-size: 0.95rem;
+  }
+}

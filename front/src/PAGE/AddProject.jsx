@@ -35,7 +35,7 @@ const AddProject = () => {
     }
   };
 
-  return (
+  return <>
     <div className="add-project">
       <h2>Add New Project</h2>
       <form onSubmit={handleSubmit}>
@@ -45,14 +45,14 @@ const AddProject = () => {
           value={projectName}
           onChange={(e) => setProjectName(e.target.value)}
           required
-        />
+          />
 
         <label>Project Description:</label>
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
-        ></textarea>
+          ></textarea>
 
         <label>Project Specialty:</label>
         <input
@@ -60,14 +60,14 @@ const AddProject = () => {
           value={specialty}
           onChange={(e) => setSpecialty(e.target.value)}
           required
-        />
+          />
          <label>Project link</label>
         <input
           type="text"
           value={link}
           onChange={(e) => setLink(e.target.value)}
           required
-        />
+          />
 
         <label>Upload File:</label>
         <input type="file" onChange={handleFileChange} required />
@@ -75,7 +75,17 @@ const AddProject = () => {
         <button type="submit">Upload Project</button>
       </form>
     </div>
-  );
+     <div style={{ backgroundColor: '#f2f2f2', minHeight: '100vh', padding: '1rem' }}>
+       <div className="message-card">
+      <h2 className="message-name">Sarbaz</h2>
+      <p className="message-email">📧 Sarbax@gmail.com</p>
+      <div className="message-text">
+        <p>this ii soart where messge s disfhsefkjshf sj</p>
+      </div>
+    </div>
+     </div>
+          </>
+  
 };
 
 export default AddProject;
