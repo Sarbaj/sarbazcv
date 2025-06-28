@@ -76,7 +76,7 @@ useEffect(() => {
       }
       try {
         
-        const response = await fetch("https://vivabackend.onrender.com/bin/getverified", {
+        const response = await fetch("https://sarbazcvbackend.vercel.app/bin/getverified", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -85,13 +85,15 @@ useEffect(() => {
         });
 
         const data = await response.json();
+      
      if (data.status !== 200 || !data.data.payload) {
           navigate('/bin/auth/login');
         }
      
         
       } catch (error) {
-        console.log("error");
+        
+        navigate('/bin/auth/login');
       }
     };
     verifyToken();
