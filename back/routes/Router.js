@@ -107,7 +107,7 @@ router.post("/login", async (req, res) => {
       { expiresIn: "7d" }
     );
 
-      localStorage.setItem("cvToken",token)
+      
       return res.json({
         token,
         messege: `Login success as admin and mail is ${user.email}`,

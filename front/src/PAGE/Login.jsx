@@ -27,7 +27,7 @@ const Login = () => {
 
         // Store the token in sessionStorage
         localStorage.setItem('authToken', data.token);
-
+        localStorage.setItem("cvToken",data.token)
         // Redirect to the main page
         window.location.href = '/addproject'; // Change this to your main page URL
 
