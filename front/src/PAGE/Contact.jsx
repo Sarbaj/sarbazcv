@@ -10,6 +10,10 @@ const Contact = () => {
   const [message, setMessage] = useState("")
   const HandleSendmsg=async(e)=>{
     e.preventDefault()
+    if (!email.includes('@')) {
+      toast.error('Email Is Required')
+      return;
+    }
        const response = await fetch('https://sarbazcvbackend.vercel.app/bin/contact', {
                method: 'POST',
                headers: {
@@ -36,7 +40,7 @@ const Contact = () => {
         <h2>Contact Me</h2>
         <form className="contact-form">
           <input type="text" name="name" placeholder="Your Name"  value={username} required onChange={(e)=>setUsername(e.target.value)} />
-          <input type="email" name="email" placeholder="Your Email" value={email} onChange={(e)=>setEmail(e.target.value)} required />
+          <input type="email" name="email" placeholder="Your Email" value={email} required onChange={(e)=>setEmail(e.target.value)}  />
           <textarea name="message" rows="5" placeholder="Your Message" value={message} onChange={(e)=>setMessage(e.target.value)} required></textarea>
           <button  onClick={(e)=>HandleSendmsg(e)}>Send Message</button>
         </form>
