@@ -32,7 +32,7 @@ const Home = () => {
     <>
     <div className="homecontainer">
         <h1 ref={headingRef}>Making <span >Complex </span>Web Apps<br></br> Feel Simple 🤝</h1>
-        <p>Hi, I'm Sarbaz Malek, a MERN Stack Developer based in India.<br></br> 
+        <p>Hi, I'm Sarbaz Malek, a MERN Stack Developer based in Mehsana,Gujrat India.<br></br> 
         With a passion for building efficient and user-friendly web applications, <br></br> I create seamless digital experiences
          that are functional, scalable, and impactful.</p>
     </div>
