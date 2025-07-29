@@ -1,7 +1,7 @@
 .services-section {
   padding: 40px 20px;
   text-align: center;
- margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .section-title {
@@ -16,7 +16,7 @@
 }
 
 .service-card {
-  background: black;
+  background: #929292;
   color: white;
   padding: 25px;
   border-radius: 12px;
