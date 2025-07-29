@@ -57,7 +57,7 @@ const Navbar = () => {
       </div>
 
       <div className="social-icons">
-        <a href="https://www.linkedin.com/in/sarbaz-malek-115027231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+        <a href="https://www.linkedin.com/in/sarbaz-malek-115027231" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
         <a href="https://github.com/Sarbaj" target="_blank" rel="noopener noreferrer"><FaGithub  /></a>
         <a href="https://wa.me/qr/ZLB7AW7H5CU2K1" target="_blank" rel="noopener noreferrer"><FaWhatsapp  /></a>
       </div>
