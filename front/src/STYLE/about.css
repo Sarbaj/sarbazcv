@@ -1,82 +1,82 @@
 .about-container {
-    width: 100vw;
-    min-height: 85vh;
-    display: flex;
-    flex-direction: column;
-    padding: 4.5rem 2rem;
-    align-items: center;
+  width: 100vw;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  padding: 4.5rem 2rem;
+  align-items: center;
 }
 
 .about-container > h1 {
-    font-size: 5rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    overflow: hidden;
-    text-align: center;
+  font-size: 5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  overflow: hidden;
+  text-align: center;
 }
 
 .about-container .about {
-    width: 75vw;
-    min-height: 50vh;
-    background: rgb(0, 0, 0);
-    color: rgba(255, 255, 255, 0.821);
-    border-radius: 8px;
-    padding: 2rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem; /* Spacing between sections */
+  width: 75vw;
+  min-height: 50vh;
+  background: #1e1e1e;
+  color: rgba(255, 255, 255, 0.821);
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem; /* Spacing between sections */
 }
 
 .about-container .about h1 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-align: center;
 }
 
 .about-container .about .content {
-    min-height: 40vh;
-    width: 100%; /* Use full width for content */
-    max-width: 600px; /* Limit max width */
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
-    padding: 1rem;
-    overflow: visible;
-    text-align: justify; /* Improve text readability */
+  min-height: 40vh;
+  width: 100%; /* Use full width for content */
+  max-width: 600px; /* Limit max width */
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  overflow: visible;
+  text-align: justify; /* Improve text readability */
 }
 
 /* Responsive Styles */
 @media (max-width: 800px) {
-    .about-container > h1 {
-        font-size: 3rem; /* Smaller font size for smaller screens */
-    }
+  .about-container > h1 {
+    font-size: 3rem; /* Smaller font size for smaller screens */
+  }
 
-    .about-container .about {
-          width: 85vw;
-        min-height: auto; /* Make section height fluid */
-        padding: 1.5rem;
-    }
+  .about-container .about {
+    width: 85vw;
+    min-height: auto; /* Make section height fluid */
+    padding: 1.5rem;
+  }
 
-    .about-container .about .content {
-        font-size: 0.9rem; /* Reduce font size for readability */
-        padding: 0.5rem;
-    }
+  .about-container .about .content {
+    font-size: 0.9rem; /* Reduce font size for readability */
+    padding: 0.5rem;
+  }
 }
 
 @media (max-width: 370px) {
-    .about-container > h1 {
-        font-size: 2.5rem; /* Further reduced font size */
-    }
+  .about-container > h1 {
+    font-size: 2.5rem; /* Further reduced font size */
+  }
 
-    .about-container .about {
-          width: 65vw;
-        padding: 1rem;
-    }
+  .about-container .about {
+    width: 65vw;
+    padding: 1rem;
+  }
 
-    .about-container .about .content {
-        font-size: 0.8rem; /* Smaller font size for mobile */
-    }
+  .about-container .about .content {
+    font-size: 0.8rem; /* Smaller font size for mobile */
+  }
 }
