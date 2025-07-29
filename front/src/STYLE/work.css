@@ -39,7 +39,7 @@
 }
 
 .work-main .project-div .project-display {
-  background: black;
+  background: #1e1e1e;
   width: 65vw;
   height: 25rem;
   display: flex;
@@ -142,7 +142,7 @@
   }
 
   .work-main .project-div .project-display {
-    background: black;
+    background: #1e1e1e;
     width: 90vw;
     height: 25rem;
     display: flex;
@@ -197,7 +197,7 @@
   }
 
   .work-main .project-div .project-display {
-    background: black;
+    background: #1e1e1e;
     width: 90vw;
     height: 13rem;
     display: flex;

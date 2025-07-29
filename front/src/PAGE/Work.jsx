@@ -91,7 +91,7 @@ const Work = () => {
                     onClick={(e) => Handleproject(e, i, data)}
                     style={{
                       textDecoration: "none",
-                      color: "black",
+                      color: "#1e1e1e",
                       cursor: "pointer",
                       fontWeight: "500",
                     }}

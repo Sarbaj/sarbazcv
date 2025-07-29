@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -15,17 +14,16 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-
 }
-.logo{
+.logo {
   width: 15rem;
   height: 60px;
   overflow: hidden;
- display: flex;
- justify-content: center;
- align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.logo img{
+.logo img {
   width: 18rem;
 }
 
@@ -48,7 +46,7 @@
   text-decoration: none;
   font-size: 1rem;
   text-transform: uppercase;
-  color: black; /* Change as needed */
+  color: #1e1e1e; /* Change as needed */
   font-weight: 500;
 }
 
@@ -58,7 +56,7 @@
 
 .social-icons a {
   margin: 0 10px;
-  color: black; /* Change as needed */
+  color: #1e1e1e; /* Change as needed */
   font-size: 18px;
   text-decoration: none;
 }
@@ -127,7 +125,7 @@
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
-  color: black;
+  color: #1e1e1e;
   z-index: 20;
 }
 

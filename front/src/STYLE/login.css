@@ -1,16 +1,16 @@
 /* General Reset */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: #F1EFEB;
-  font-family: 'Segoe UI', sans-serif;
-
+  background-color: #f1efeb;
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* Centering container */
 .login-container {
-    position: relative;
+  position: relative;
   min-height: 55vh;
   display: flex;
   justify-content: center;
@@ -38,8 +38,8 @@ body, html {
   color: #333;
   text-align: center;
 }
-.login-form p{
-    color: red;
+.login-form p {
+  color: red;
 }
 
 .login-form input {
@@ -48,7 +48,7 @@ body, html {
   border: 1px solid #ccc;
   border-radius: 8px;
 }
-.login-form .UpdateLink{
+.login-form .UpdateLink {
   text-decoration: none;
   color: #52504d;
 }
@@ -56,7 +56,7 @@ body, html {
 .login-form button {
   padding: 10px 15px;
   font-size: 16px;
-  background-color: black;
+  background-color: #1e1e1e;
   border: none;
   border-radius: 8px;
   cursor: pointer;
