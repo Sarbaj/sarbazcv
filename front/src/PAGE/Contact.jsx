@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-
 import "../STYLE/contact.css";
 
 const Contact = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isFocused, setIsFocused] = useState({ name: false, email: false, message: false });
+
   const HandleSendmsg = async (e) => {
     e.preventDefault();
     if (!email.includes("@")) {
@@ -43,40 +43,97 @@ const Contact = () => {
     setMessage("");
     setUsername("");
   };
+
   return (
     <>
-      <div className="contact-page">
-        <section className="contact-form-section">
-          <h2>Contact Me</h2>
-          <form className="contact-form">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={username}
-              required
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={email}
-              required
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Your Message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-            ></textarea>
-            <button onClick={(e) => HandleSendmsg(e)}>Send Message</button>
+      <div className="contact-container">
+        <div className="contact-hero">
+          <span className="contact-label">Get In Touch</span>
+          <h1 className="contact-title">
+            Let's Create<br />
+            <span className="highlight-text">Something Amazing</span><br />
+            Together
+          </h1>
+          <p className="contact-subtitle">
+            Have a project in mind? Let's discuss how we can bring your ideas to life.
+          </p>
+        </div>
+
+        <div className="contact-content">
+          <div className="contact-info">
+            <div className="info-item">
+              <span className="info-icon">📧</span>
+              <div className="info-details">
+                <h3>Email</h3>
+                <a href="mailto:sarbazmalek@gmail.com">sarbazmalek@gmail.com</a>
+              </div>
+            </div>
+
+            <div className="info-item">
+              <span className="info-icon">📍</span>
+              <div className="info-details">
+                <h3>Location</h3>
+                <p>Mehsana, Gujarat, India</p>
+              </div>
+            </div>
+
+            <div className="info-item">
+              <span className="info-icon">💼</span>
+              <div className="info-details">
+                <h3>Availability</h3>
+                <p>Open for freelance projects</p>
+              </div>
+            </div>
+          </div>
+
+          <form className="contact-form-modern" onSubmit={HandleSendmsg}>
+            <div className={`form-group ${isFocused.name || username ? 'focused' : ''}`}>
+              <label htmlFor="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                onFocus={() => setIsFocused({ ...isFocused, name: true })}
+                onBlur={() => setIsFocused({ ...isFocused, name: false })}
+                required
+              />
+            </div>
+
+            <div className={`form-group ${isFocused.email || email ? 'focused' : ''}`}>
+              <label htmlFor="email">Your Email</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onFocus={() => setIsFocused({ ...isFocused, email: true })}
+                onBlur={() => setIsFocused({ ...isFocused, email: false })}
+                required
+              />
+            </div>
+
+            <div className={`form-group full-width ${isFocused.message || message ? 'focused' : ''}`}>
+              <label htmlFor="message">Your Message</label>
+              <textarea
+                id="message"
+                rows="6"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                onFocus={() => setIsFocused({ ...isFocused, message: true })}
+                onBlur={() => setIsFocused({ ...isFocused, message: false })}
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" className="submit-btn">
+              <span>Send Message</span>
+              <span className="btn-arrow">→</span>
+            </button>
           </form>
-        </section>
+        </div>
       </div>
+
       <ToastContainer
         style={{ zIndex: 200 }}
         position="top-right"

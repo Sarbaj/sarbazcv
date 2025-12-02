@@ -91,14 +91,44 @@ const Navbar = () => {
       <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
         <Link to="/" onClick={() => setMenuOpen(false)}>home</Link>
         <Link to="/about" onClick={() => setMenuOpen(false)}>about</Link>
-        <Link to="/contact" onClick={() => setMenuOpen(false)}>contact</Link>
+        <Link to="/services" onClick={() => setMenuOpen(false)}>services</Link>
         <Link to="/projects" onClick={() => setMenuOpen(false)}>projects</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>contact</Link>
         {isLoggedIn && (
-          <Link to="/addproject" onClick={() => setMenuOpen(false)}>dashboard</Link>
+          <Link to="/bin/auth/dashboard" onClick={() => setMenuOpen(false)}>dashboard</Link>
+        )}
+        
+        {/* Show social icons in mobile menu when active */}
+        {menuOpen && (
+          <div className="mobile-social-icons">
+            <a href="https://www.linkedin.com/in/sarbaz-malek-115027231" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+            <a href="https://github.com/Sarbaj" target="_blank" rel="noopener noreferrer"><FaGithub  /></a>
+            <a href="https://wa.me/qr/ZLB7AW7H5CU2K1" target="_blank" rel="noopener noreferrer"><FaWhatsapp  /></a>
+          </div>
+        )}
+
+        {/* Show profile in mobile menu when active */}
+        {menuOpen && isLoggedIn && (
+          <div className="mobile-profile-section">
+            <div className="profile-icon" onClick={toggleProfileMenu}>
+              <FaUser />
+            </div>
+            {showProfileMenu && (
+              <div className="profile-dropdown">
+                <div className="profile-name">
+                  <FaUser /> {adminName}
+                </div>
+                <button className="logout-btn" onClick={handleLogout}>
+                  <FaSignOutAlt /> Logout
+                </button>
+              </div>
+            )}
+          </div>
         )}
       </div>
 
-      <div className="social-icons">
+      {/* Desktop social icons and profile */}
+      <div className="social-icons desktop-only">
         <a href="https://www.linkedin.com/in/sarbaz-malek-115027231" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
         <a href="https://github.com/Sarbaj" target="_blank" rel="noopener noreferrer"><FaGithub  /></a>
         <a href="https://wa.me/qr/ZLB7AW7H5CU2K1" target="_blank" rel="noopener noreferrer"><FaWhatsapp  /></a>

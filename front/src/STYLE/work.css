@@ -1,12 +1,12 @@
 .work-main {
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   min-height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 6rem 1rem;
-  overflow-x: hidden;
 }
 
 .work-main p:first-child {
@@ -25,12 +25,14 @@
 }
 
 .work-main .project-flex {
-  width: 90vw;
+  width: 100%;
+  max-width: 90vw;
   min-height: auto;
 }
 
 .work-main .project-div {
-  width: 90vw;
+  width: 100%;
+  max-width: 90vw;
   min-height: auto;
   display: flex;
   flex-direction: row;

@@ -2,6 +2,7 @@ import React from "react";
 import "../STYLE/home.css";
 import Work from "./Work";
 import Contact from "./Contact";
+import About from "./About";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -45,23 +46,29 @@ const Home = () => {
       </div>
       <div className="marquee-container">
         <div className="marquee">
-          <span>
-            AI Integration • JWT Auth • Mongo Atlas • WebSockets • REST APIs •
-            Real-Time Chat • GSAP Animations • Responsive UI • Design Thinking •
-            Scalable Architecture • Performance Optimization • Freelance
-            Experience • Deployment Ready • Auth System • UI/UX •
-          </span>
-          <span>
-            AI Integration • JWT Auth • Mongo Atlas • WebSockets • REST APIs •
-            Real-Time Chat • GSAP Animations • Responsive UI • Design Thinking •
-            Scalable Architecture • Performance Optimization • Freelance
-            Experience • Deployment Ready • Auth System • UI/UX •
-          </span>
+      <span>
+  AI Integration • JWT Authentication • MongoDB Atlas • WebSockets • 
+  Real-Time Chat Systems • RESTful APIs • GSAP Animations • Responsive UI/UX • 
+  Design Thinking • Scalable Architecture • Performance Optimization • 
+  Freelancing Experience • Full Deployment Setup • Secure Auth Systems • 
+  Modern Frontend Development • Backend API Engineering
+</span>
+
+<span>
+  AI Integration • JWT Authentication • MongoDB Atlas • WebSockets • 
+  Real-Time Chat Systems • RESTful APIs • GSAP Animations • Responsive UI/UX • 
+  Design Thinking • Scalable Architecture • Performance Optimization • 
+  Freelancing Experience • Full Deployment Setup • Secure Auth Systems • 
+  Modern Frontend Development • Backend API Engineering
+</span>
+
         </div>
       </div>
 
-      <Work />
+      <About />
       <Services />
+      <Work />
+      <Contact />
       
     </>
   );

@@ -3,6 +3,7 @@
   max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
+  width: 100%;
 }
 
 .projects-header {
@@ -297,6 +298,7 @@ button:active {
   max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
+  width: 100%;
 }
 
 .messages-header {
