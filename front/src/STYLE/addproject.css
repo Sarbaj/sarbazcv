@@ -1,101 +1,474 @@
-.add-project {
-  width: 400px;
-  margin: auto;
+/* Projects Container */
+.projects-container {
+  max-width: 1200px;
+  margin: 40px auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
 }
 
-h2 {
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.projects-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+.btn-add-new {
+  padding: 12px 24px;
+  background: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-add-new:hover {
+  background: #1e1e1e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Add Project Form */
+.add-project {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  padding: 40px;
+  border: none;
+  border-radius: 16px;
+  background: #f1efeb;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-project:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+.add-project h2 {
   text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.add-project h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #000000;
+  border-radius: 2px;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 label {
-  margin-top: 10px;
+  font-weight: 600;
+  color: #000000;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  display: block;
 }
 
 input,
 textarea {
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 14px 16px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+input[type="file"] {
+  padding: 12px;
+  border: 2px dashed #000000;
+  background-color: #f1efeb;
+  cursor: pointer;
+}
+
+input[type="file"]:hover {
+  border-color: #000000;
+  background-color: #ffffff;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form-buttons button {
+  flex: 1;
 }
 
 button {
   margin-top: 15px;
-  padding: 10px;
-  background-color: #1e1e1e;
+  padding: 16px 24px;
+  background: #000000;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-  background-color: rgba(33, 32, 32, 0.707);
-}
-.message-card {
-  width: 90%;
-  max-width: 500px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #f1efeb;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e2e2e2;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  transition: box-shadow 0.3s ease;
+  background: #1e1e1e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.message-card:hover {
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.message-name {
-  font-size: 1.6rem;
+.btn-cancel {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cancel:hover {
+  background: #f1efeb;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Projects Table */
+.projects-table-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.projects-table thead {
+  background: #000000;
+  color: white;
+}
+
+.projects-table th {
+  padding: 18px 16px;
+  text-align: left;
   font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 6px;
-}
-
-.message-email {
   font-size: 0.95rem;
-  color: #7f8c8d;
-  margin-bottom: 14px;
-  word-break: break-word;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.message-text {
-  font-size: 1rem;
-  color: #34495e;
-  line-height: 1.5;
-  border-top: 1px solid #ddd;
-  padding-top: 12px;
-  word-wrap: break-word;
+.projects-table tbody tr {
+  border-bottom: 1px solid #000000;
+  transition: background-color 0.2s ease;
+}
+
+.projects-table tbody tr:hover {
+  background-color: #f1efeb;
+}
+
+.projects-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.projects-table td {
+  padding: 16px;
+  color: #000000;
+  font-size: 0.95rem;
+}
+
+.description-cell {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-link {
+  color: #000000;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: #1e1e1e;
+  text-decoration: none;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-view,
+.btn-update {
+  padding: 8px 16px;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+.btn-view {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-view:hover {
+  background: #f1efeb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-update {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-update:hover {
+  background: #1e1e1e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.no-projects {
+  text-align: center;
+  padding: 40px !important;
+  color: #000000;
+  font-style: italic;
+}
+/* Contact Messages Section */
+.messages-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.messages-header {
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.messages-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+/* Messages Table */
+.messages-table-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.messages-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.messages-table thead {
+  background: #000000;
+  color: white;
+}
+
+.messages-table th {
+  padding: 18px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.messages-table tbody tr {
+  border-bottom: 1px solid #000000;
+  transition: background-color 0.2s ease;
+}
+
+.messages-table tbody tr:hover {
+  background-color: #f1efeb;
+}
+
+.messages-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.messages-table td {
+  padding: 16px;
+  color: #000000;
+  font-size: 0.95rem;
+}
+
+.message-cell {
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.no-messages {
+  text-align: center;
+  padding: 40px !important;
+  color: #000000;
+  font-style: italic;
+}
+
+.btn-delete {
+  padding: 8px 16px;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin: 0;
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-delete:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive tweaks */
-@media (max-width: 600px) {
-  .message-card {
-    padding: 16px;
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 10px;
   }
 
-  .message-name {
-    font-size: 1.3rem;
+  .projects-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
   }
 
-  .message-email {
+  .projects-header h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .add-project {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+
+  .add-project h2 {
+    font-size: 1.6rem;
+  }
+
+  input,
+  textarea {
+    padding: 12px 14px;
+  }
+
+  .projects-table-container {
+    overflow-x: auto;
+  }
+
+  .projects-table {
     font-size: 0.85rem;
   }
 
-  .message-text {
-    font-size: 0.95rem;
+  .projects-table th,
+  .projects-table td {
+    padding: 12px 8px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .description-cell {
+    max-width: 150px;
+  }
+
+  .messages-section {
+    padding: 10px;
+  }
+
+  .messages-header h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .messages-table-container {
+    overflow-x: auto;
+  }
+
+  .messages-table {
+    font-size: 0.85rem;
+  }
+
+  .messages-table th,
+  .messages-table td {
+    padding: 12px 8px;
+  }
+
+  .message-cell {
+    max-width: 150px;
   }
 }

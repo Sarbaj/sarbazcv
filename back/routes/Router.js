@@ -30,32 +30,7 @@ router.post("/getUsername",async(req,res)=>{
 
 // Register Route For AdminRegister
 
-router.post("/registeradmin", async (req, res) => {
-  const { name, email, password } = req.body;
-  if (!name || !email || !password)
-    return res.status(400).json({ message: "All field are required" });
-  try {
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(409).json({ message: "Admin already registered" });
-    }
-    //lets Genrate Hash Bro
-    //First Salt
-    const salt = await bcrypt.genSalt(10);
-    const Hashedpassword = await bcrypt.hash(password, salt);
 
-    const regisuser = new User({
-      name,
-      email,
-      password: Hashedpassword,
-    });
-    await regisuser.save();
-    res.status(201).json({ message: "Admin Registered Successfully" });
-  } catch (err) {
-    console.error("Error in /register:", err);
-    res.status(500).json({ message: "Server error" });
-  }
-});
 router.post("/postcontact", async (req, res) => {
   const { name, email, message } = req.body;
   if (!name || !email || !message)
@@ -191,5 +166,21 @@ router.post("/getverified",async(req,res)=>{
         
     }
 })
+
+router.delete("/deletecontact/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedMessage = await ContactModel.findByIdAndDelete(id);
+    
+    if (!deletedMessage) {
+      return res.status(404).json({ message: 'Message not found' });
+    }
+    
+    return res.status(200).json({ message: 'Message deleted successfully' });
+  } catch (err) {
+    console.error("Error in delete:", err);
+    return res.status(500).json({ message: 'Server error', error: err.message });
+  }
+});
 
 export default router;
