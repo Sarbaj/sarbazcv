@@ -188,7 +188,7 @@ router.delete("/deletecontact/:id", async (req, res) => {
 // Get all achievements
 router.get("/achievements", async (req, res) => {
   try {
-    const achievements = await Achievement.find().sort({ createdAt: -1 });
+    const achievements = await Achievement.find().sort({ createdAt: 1 });
     return res.status(200).json({ message: 'Achievements fetched successfully', data: achievements });
   } catch (err) {
     console.error("Error fetching achievements:", err);
