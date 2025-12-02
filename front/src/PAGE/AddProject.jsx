@@ -14,6 +14,7 @@ const AddProject = () => {
   const [showAddForm, setShowAddForm] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editingProjectId, setEditingProjectId] = useState(null);
+  const [expandedMessages, setExpandedMessages] = useState({});
   const navigate = useNavigate();
 
   const handleFileChange = (event) => {
@@ -163,6 +164,13 @@ useEffect(() => {
       }
     }
   };
+
+  const toggleMessageExpand = (messageId) => {
+    setExpandedMessages(prev => ({
+      ...prev,
+      [messageId]: !prev[messageId]
+    }));
+  };
  useEffect(() => {
     const verifyToken = async () => {
       const token =localStorage.getItem("cvToken");
@@ -304,16 +312,37 @@ useEffect(() => {
           </thead>
           <tbody>
             {contactdata.length > 0 ? (
-              contactdata.map((data, index) => (
-                <tr key={data._id || index}>
-                  <td>{data.name}</td>
-                  <td>{data.email}</td>
-                  <td className="message-cell" title={data.messsage}>{data.messsage}</td>
-                  <td>
-                    <button className="btn-delete" onClick={() => handleDeleteMessage(data._id)}>Delete</button>
-                  </td>
-                </tr>
-              ))
+              contactdata.map((data, index) => {
+                const isExpanded = expandedMessages[data._id];
+                const messageText = data.messsage || '';
+                const shouldTruncate = messageText.length > 50;
+                const displayText = isExpanded || !shouldTruncate 
+                  ? messageText 
+                  : messageText.substring(0, 50) + '...';
+
+                return (
+                  <tr key={data._id || index}>
+                    <td>{data.name}</td>
+                    <td>{data.email}</td>
+                    <td className="message-cell">
+                      <div className="message-content">
+                        {displayText}
+                        {shouldTruncate && (
+                          <button 
+                            className="btn-see-more" 
+                            onClick={() => toggleMessageExpand(data._id)}
+                          >
+                            {isExpanded ? 'See Less' : 'See More'}
+                          </button>
+                        )}
+                      </div>
+                    </td>
+                    <td>
+                      <button className="btn-delete" onClick={() => handleDeleteMessage(data._id)}>Delete</button>
+                    </td>
+                  </tr>
+                );
+              })
             ) : (
               <tr>
                 <td colSpan="4" className="no-messages">No messages available</td>

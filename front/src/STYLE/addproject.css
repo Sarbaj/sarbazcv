@@ -361,9 +361,14 @@ button:active {
 
 .message-cell {
   max-width: 400px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+}
+
+.message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .no-messages {
@@ -392,6 +397,28 @@ button:active {
   color: #ffffff;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-see-more {
+  padding: 4px 12px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin: 0;
+  background: #f1efeb;
+  color: #000000;
+  align-self: flex-start;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-see-more:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive tweaks */
@@ -469,6 +496,11 @@ button:active {
   }
 
   .message-cell {
-    max-width: 150px;
+    max-width: 200px;
+  }
+
+  .btn-see-more {
+    font-size: 0.75rem;
+    padding: 3px 10px;
   }
 }
