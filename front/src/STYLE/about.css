@@ -523,6 +523,15 @@
   }
 }
 
+/* Loading Spinner */
+.loading-spinner {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.2rem;
+  color: #000000;
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
   .about-container {
     padding: 60px 5%;

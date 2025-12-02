@@ -43,8 +43,44 @@ const ContactShema = new mongoose.Schema({
  {timestamps:true}
 );
 
+const achievementSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  icon: {
+    type: String,
+    default: '🏆'
+  }
+}, {timestamps: true});
+
+const skillCategorySchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  icon: {
+    type: String,
+    required: true
+  },
+  skills: [{
+    type: String,
+    required: true
+  }],
+  isHighlighted: {
+    type: Boolean,
+    default: false
+  }
+}, {timestamps: true});
+
 const Item = mongoose.model('Project', itemSchema);
 const User = mongoose.model('User', userSchema);
 const ContactModel = mongoose.model('Contact', ContactShema);
+const Achievement = mongoose.model('Achievement', achievementSchema);
+const SkillCategory = mongoose.model('SkillCategory', skillCategorySchema);
 
-export  {User,Item,ContactModel};   
+export  {User, Item, ContactModel, Achievement, SkillCategory};   

@@ -9,6 +9,7 @@ import Contact from './PAGE/Contact';
 import Footer from './PAGE/Footer';
 import AddProject from './PAGE/AddProject';
 import Login from './PAGE/Login';
+import TestAPI from './PAGE/TestAPI';
 import { useEffect } from 'react';
 const App = () => {
     const location = useLocation();
@@ -26,6 +27,7 @@ const App = () => {
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/bin/auth/dashboard' element={<AddProject/>}/>
       <Route path='/auth/login' element={<Login/>}/>
+      <Route path='/test-api' element={<TestAPI/>}/>
    
     </Routes>
     <Footer/>
