@@ -86,24 +86,21 @@ const Work = () => {
                     <img ref={imageRef} src={data.imageUrl} alt="project img" />
                   </div>
 
-                  <h2>{data.name}</h2>
-                  <a
-                    onClick={(e) => Handleproject(e, i, data)}
-                    style={{
-                      textDecoration: "none",
-                      color: "#1e1e1e",
-                      cursor: "pointer",
-                      fontWeight: "500",
-                    }}
-                  >
-                    Live Demo <FaLink />
-                  </a>
-                  <p>{data.description}</p>
-                  <div className="btn-info">
-                    {trimmedArray.length > 0 &&
-                      trimmedArray.map((data, i) => {
-                        return <button key={i}>{data}</button>;
-                      })}
+                  <div className="project-content">
+                    <h2>{data.name}</h2>
+                    <p>{data.description}</p>
+                    <a
+                      onClick={(e) => Handleproject(e, i, data)}
+                      className="project-link-btn"
+                    >
+                      Live Demo <FaLink />
+                    </a>
+                    <div className="btn-info">
+                      {trimmedArray.length > 0 &&
+                        trimmedArray.map((data, i) => {
+                          return <button key={i}>{data}</button>;
+                        })}
+                    </div>
                   </div>
                 </div>
               );
