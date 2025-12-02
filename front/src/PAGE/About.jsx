@@ -1,10 +1,110 @@
 import React, { useState, useEffect } from 'react'
 import '../STYLE/about.css';
 
+// Static fallback data
+const staticAchievements = [
+  {
+    _id: 'static-1',
+    icon: "🎓",
+    title: "BCA First Year - The Spark",
+    description: "My journey into development started long before I understood terms like 'full-stack' or 'scalability.' It began in Semester 2, when I created my very first website. I still remember the excitement of experimenting with layouts, colors, and simple animations. What surprised me the most was not the website itself, but the reaction it received—my design looked better than the final-year students' projects, and even my teachers appreciated the effort. That moment gave me the confidence I didn't know I needed."
+  },
+  {
+    _id: 'static-2',
+    icon: "💼",
+    title: "Second Year - First Freelance",
+    description: "By the time I entered Second Year, my curiosity had turned into a skill, and my skill began turning into opportunities. I built my first freelancing project—an Online Tournament Management System, complete with player entry, match scheduling, result management, and smooth UI. It became the first project that made me feel like, 'Yes, this is what I want to do in life.'"
+  },
+  {
+    _id: 'static-3',
+    icon: "🏆",
+    title: "Final Year - Rank 1 Achievement",
+    description: "In Final Year, everything came full circle. I developed a full software solution for my academic project and ended up getting Rank 1 in Software Development. That achievement validated the countless hours I spent debugging, designing, and learning."
+  },
+  {
+    _id: 'static-4',
+    icon: "🚀",
+    title: "MCA - Professional Growth",
+    description: "After BCA, I started my MCA journey, and things only got better. I created a B2B website for a startup, handling everything from product listings and authentication to modern responsive UI. I also developed a service-based company website, helping them showcase their business with a clean and professional online presence."
+  },
+  {
+    _id: 'static-5',
+    icon: "🤖",
+    title: "AI Integration - New Horizons",
+    description: "One of the most exciting moments came when Ganpat University's MCA faculty approached me to build an AI-powered website for their AI Viva Portal. I integrated modern technologies, AI question generation, anti-cheat features, live monitoring, and smooth UI/UX to create a complete digital viva experience. Bringing AI into my projects opened my eyes to a whole new world of possibilities."
+  },
+  {
+    _id: 'static-6',
+    icon: "✨",
+    title: "The Journey Continues...",
+    description: "Looking back, what began as a simple college assignment in BCA has turned into a passionate journey of freelancing, building real products, integrating AI, and continuously pushing myself to learn something new every day. And honestly, this is just the beginning."
+  }
+];
+
+const staticSkills = [
+  {
+    _id: 'skill-1',
+    icon: "💻",
+    title: "Full-Stack Development",
+    skills: ["MERN Stack (MongoDB, Express, React, Node.js)", "REST API Development", "MVC Architecture", "JWT Authentication", "Socket.IO (Real-Time Features)", "Third-Party API Integration"],
+    isHighlighted: false
+  },
+  {
+    _id: 'skill-2',
+    icon: "🎨",
+    title: "Frontend Development",
+    skills: ["HTML5 & CSS3", "JavaScript (ES6+)", "React.js", "Responsive Web Design", "Bootstrap & Tailwind CSS", "Modern UI/UX Principles"],
+    isHighlighted: false
+  },
+  {
+    _id: 'skill-3',
+    icon: "🛠",
+    title: "Backend & Database",
+    skills: ["Node.js & Express.js", "MongoDB & Mongoose", "CRUD Operations", "Server-Side Validation", "Role-Based Access Control", "Performance Optimization"],
+    isHighlighted: false
+  },
+  {
+    _id: 'skill-4',
+    icon: "⚙️",
+    title: "DevOps & Tools",
+    skills: ["Git & GitHub", "Postman", "VS Code", "Vercel, Render, Netlify Deployments", "Environment Configuration"],
+    isHighlighted: false
+  },
+  {
+    _id: 'skill-5',
+    icon: "🤖",
+    title: "AI & Automation",
+    skills: ["AI Integration in Web Apps", "Prompt Engineering Basics", "Chatbot / AI Response Integration", "Basic Automation Scripts"],
+    isHighlighted: true
+  },
+  {
+    _id: 'skill-6',
+    icon: "🎨",
+    title: "Graphic Design",
+    skills: ["Figma", "Adobe Illustrator", "Canva"],
+    isHighlighted: false
+  },
+  {
+    _id: 'skill-7',
+    icon: "🧪",
+    title: "Testing & Debugging",
+    skills: ["API Testing (Postman)", "Console Debugging", "Error & Exception Handling", "Unit Testing Approach"],
+    isHighlighted: false
+  },
+  {
+    _id: 'skill-8',
+    icon: "🧑‍💼",
+    title: "Freelancing & Project Management",
+    skills: ["Client Communication", "Requirement Analysis", "Timeline & Task Planning", "Building Custom Web Solutions", "Project Deployment & Maintenance"],
+    isHighlighted: false
+  }
+];
+
 const About = () => {
-  const [achievements, setAchievements] = useState([]);
-  const [skillCategories, setSkillCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // Initialize with static data
+  const [achievements, setAchievements] = useState(staticAchievements);
+  const [skillCategories, setSkillCategories] = useState(staticSkills);
+  const [dataSource, setDataSource] = useState('static'); // 'static' or 'api'
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,16 +117,18 @@ const About = () => {
         const achievementsData = await achievementsRes.json();
         const skillsData = await skillsRes.json();
 
-        if (achievementsData && achievementsData.data) {
+        // Only update if we got valid data from API
+        if (achievementsData && achievementsData.data && achievementsData.data.length > 0) {
           setAchievements(achievementsData.data);
+          setDataSource('api');
         }
-        if (skillsData && skillsData.data) {
+        if (skillsData && skillsData.data && skillsData.data.length > 0) {
           setSkillCategories(skillsData.data);
+          setDataSource('api');
         }
-        setLoading(false);
       } catch (error) {
-        console.error('Error fetching data:', error);
-        setLoading(false);
+        console.error('Error fetching data, using static fallback:', error);
+        // Keep static data on error
       }
     };
 
@@ -47,101 +149,17 @@ const About = () => {
         {/* My Journey Section */}
         <div className="section-content">
           <h2 className="section-heading">My Journey</h2>
-          {loading ? (
-            <div className="loading-spinner">Loading...</div>
-          ) : achievements.length > 0 ? (
-            <div className="journey-timeline">
-              {achievements.map((achievement) => (
-                <div key={achievement._id} className="timeline-item">
-                  <div className="timeline-marker">{achievement.icon}</div>
-                  <div className="timeline-content">
-                    <h3 className="timeline-title">{achievement.title}</h3>
-                    <p>{achievement.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="journey-timeline">
-              <div className="timeline-item">
-                <div className="timeline-marker">🎓</div>
+          <div className="journey-timeline">
+            {achievements.map((achievement) => (
+              <div key={achievement._id} className="timeline-item">
+                <div className="timeline-marker">{achievement.icon}</div>
                 <div className="timeline-content">
-                  <h3 className="timeline-title">BCA First Year - The Spark</h3>
-                  <p>
-                    My journey into development started long before I understood terms like "full-stack" or "scalability." 
-                    It began in <strong>Semester 2</strong>, when I created my very first website. I still remember the 
-                    excitement of experimenting with layouts, colors, and simple animations. What surprised me the most 
-                    was not the website itself, but the reaction it received—<span className="highlight-inline">my design 
-                    looked better than the final-year students' projects</span>, and even my teachers appreciated the effort. 
-                    That moment gave me the confidence I didn't know I needed.
-                  </p>
+                  <h3 className="timeline-title">{achievement.title}</h3>
+                  <p>{achievement.description}</p>
                 </div>
               </div>
-
-              <div className="timeline-item">
-                <div className="timeline-marker">💼</div>
-                <div className="timeline-content">
-                  <h3 className="timeline-title">Second Year - First Freelance</h3>
-                  <p>
-                    By the time I entered Second Year, my curiosity had turned into a skill, and my skill began turning 
-                    into opportunities. I built my first freelancing project—an <strong>Online Tournament Management System</strong>, 
-                    complete with player entry, match scheduling, result management, and smooth UI. It became the first 
-                    project that made me feel like, <em>"Yes, this is what I want to do in life."</em>
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <div className="timeline-marker">🏆</div>
-                <div className="timeline-content">
-                  <h3 className="timeline-title">Final Year - Rank 1 Achievement</h3>
-                  <p>
-                    In Final Year, everything came full circle. I developed a full software solution for my academic 
-                    project and ended up getting <span className="achievement-badge">Rank 1 in Software Development</span>. 
-                    That achievement validated the countless hours I spent debugging, designing, and learning.
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <div className="timeline-marker">🚀</div>
-                <div className="timeline-content">
-                  <h3 className="timeline-title">MCA - Professional Growth</h3>
-                  <p>
-                    After BCA, I started my MCA journey, and things only got better. I created a <strong>B2B website</strong> for a 
-                    startup, handling everything from product listings and authentication to modern responsive UI. I 
-                    also developed a service-based company website, helping them showcase their business with a clean 
-                    and professional online presence.
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <div className="timeline-marker">🤖</div>
-                <div className="timeline-content">
-                  <h3 className="timeline-title">AI Integration - New Horizons</h3>
-                  <p>
-                    One of the most exciting moments came when <strong>Ganpat University's MCA faculty</strong> approached me to build 
-                    an AI-powered website for their <span className="highlight-inline">AI Viva Portal</span>. I integrated modern technologies, 
-                    AI question generation, anti-cheat features, live monitoring, and smooth UI/UX to create a complete digital 
-                    viva experience. Bringing AI into my projects opened my eyes to a whole new world of possibilities.
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item highlight-item">
-                <div className="timeline-marker">✨</div>
-                <div className="timeline-content">
-                  <h3 className="timeline-title">The Journey Continues...</h3>
-                  <p>
-                    Looking back, what began as a simple college assignment in BCA has turned into a passionate journey 
-                    of freelancing, building real products, integrating AI, and continuously pushing myself to learn 
-                    something new every day. <strong>And honestly, this is just the beginning.</strong>
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
+            ))}
+          </div>
         </div>
 
         {/* Experience Section */}
@@ -231,29 +249,25 @@ const About = () => {
         <div className="section-content">
           <h2 className="section-heading">My Skills</h2>
           
-          {loading ? (
-            <div className="loading-spinner">Loading...</div>
-          ) : skillCategories.length > 0 ? (
-            <div className="skills-categories">
-              {skillCategories.map((category) => (
-                <div 
-                  key={category._id} 
-                  className={`skill-category ${category.isHighlighted ? 'highlight-category' : ''}`}
-                >
-                  <div className="category-header">
-                    <span className="category-icon">{category.icon}</span>
-                    <h3 className="category-title">{category.title}</h3>
-                  </div>
-                  <div className="category-skills">
-                    {category.skills.map((skill, index) => (
-                      <span key={index} className="skill-badge">{skill}</span>
-                    ))}
-                  </div>
+          <div className="skills-categories">
+            {skillCategories.map((category) => (
+              <div 
+                key={category._id} 
+                className={`skill-category ${category.isHighlighted ? 'highlight-category' : ''}`}
+              >
+                <div className="category-header">
+                  <span className="category-icon">{category.icon}</span>
+                  <h3 className="category-title">{category.title}</h3>
                 </div>
-              ))}
-            </div>
-          ) : (
-            <div className="skills-categories">
+                <div className="category-skills">
+                  {category.skills.map((skill, index) => (
+                    <span key={index} className="skill-badge">{skill}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
               <div className="skill-category">
                 <div className="category-header">
                   <span className="category-icon">💻</span>
@@ -351,22 +365,6 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="skill-category">
-                <div className="category-header">
-                  <span className="category-icon">🧑‍💼</span>
-                  <h3 className="category-title">Freelancing & Project Management</h3>
-                </div>
-                <div className="category-skills">
-                  <span className="skill-badge">Client Communication</span>
-                  <span className="skill-badge">Requirement Analysis</span>
-                  <span className="skill-badge">Timeline & Task Planning</span>
-                  <span className="skill-badge">Building Custom Web Solutions</span>
-                  <span className="skill-badge">Project Deployment & Maintenance</span>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
       </div>
     </div>
   )
