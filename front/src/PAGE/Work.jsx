@@ -89,12 +89,6 @@ const Work = () => {
                   <div className="project-content">
                     <h2>{data.name}</h2>
                     <p>{data.description}</p>
-                    <a
-                      onClick={(e) => Handleproject(e, i, data)}
-                      className="project-link-btn"
-                    >
-                      Live Demo <FaLink />
-                    </a>
                     <div className="btn-info">
                       {trimmedArray.length > 0 &&
                         trimmedArray.map((data, i) => {
