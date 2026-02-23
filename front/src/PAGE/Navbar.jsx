@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaLinkedin, FaGithub , FaWhatsapp , FaBars, FaTimes, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaWhatsapp, FaBars, FaTimes, FaUser, FaSignOutAlt } from 'react-icons/fa';
 import '../STYLE/navbar.css';
 import logo from '../assets/logos.gif';
 import gsap from 'gsap';
@@ -34,35 +34,10 @@ const Navbar = () => {
         },
       }
     );
-
-    // API call commented out - using static auth check only
-    // const checkAuth = async () => {
-    //   const token = localStorage.getItem("cvToken");
-    //   if (token) {
-    //     try {
-    //       const response = await fetch("https://sarbazcvbackend.vercel.app/bin/getUsername", {
-    //         method: "POST",
-    //         headers: {
-    //           "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({ token }),
-    //       });
-    //       const data = await response.json();
-    //       if (response.status === 200 && data.payload) {
-    //         setIsLoggedIn(true);
-    //         setAdminName(data.payload.name || 'Admin');
-    //       }
-    //     } catch (error) {
-    //       console.error('Auth check error:', error);
-    //     }
-    //   }
-    // };
-    // checkAuth();
   }, []);
 
   const toggleMenu = () => {
     if (!menuOpen) {
-      // Opening menu - animate circle expansion
       setMenuOpen(true);
       document.body.style.overflow = 'hidden';
       
@@ -78,7 +53,6 @@ const Navbar = () => {
         }
       );
 
-      // Animate menu links with stagger
       gsap.fromTo(menuLinksRef.current.children,
         {
           opacity: 0,
@@ -94,7 +68,6 @@ const Navbar = () => {
         }
       );
     } else {
-      // Closing menu - reverse animation
       gsap.to(menuLinksRef.current.children, {
         opacity: 0,
         y: -30,
@@ -128,42 +101,39 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar" ref={Navref}>
-      <div className={`logo ${menuOpen ? 'hidden' : ''}`}>
-        <Link to="/">
-          <img src={logo} alt="Logo" />
-        </Link>
-      </div>
+    <>
+      <nav className={`navbar ${menuOpen ? 'menu-active' : ''}`} ref={Navref}>
+        <div className={`logo ${menuOpen ? 'hidden' : ''}`}>
+          <Link to="/">
+            <img src={logo} alt="Logo" />
+          </Link>
+        </div>
 
-      {/* Hamburger Icon */}
-      <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        {menuOpen ? <FaTimes /> : <FaBars />}
-      </div>
+        <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+      </nav>
 
-      {/* Navigation Links */}
-      <div ref={menuOverlayRef} className={`nav-links ${menuOpen ? 'active' : ''}`}>
+      {/* Full-screen menu overlay - rendered at root level */}
+      <div ref={menuOverlayRef} className={`nav-overlay ${menuOpen ? 'active' : ''}`}>
         <div ref={menuLinksRef} className="menu-links-wrapper">
-          <Link to="/" onClick={() => { toggleMenu(); }}>home</Link>
-          <Link to="/about" onClick={() => { toggleMenu(); }}>about</Link>
-          <Link to="/services" onClick={() => { toggleMenu(); }}>services</Link>
-          <Link to="/projects" onClick={() => { toggleMenu(); }}>projects</Link>
-          <Link to="/journey" onClick={() => { toggleMenu(); }}>my journey</Link>
-          <Link to="/contact" onClick={() => { toggleMenu(); }}>contact</Link>
+          <Link to="/" onClick={toggleMenu}>home</Link>
+          <Link to="/about" onClick={toggleMenu}>about</Link>
+          <Link to="/services" onClick={toggleMenu}>services</Link>
+          <Link to="/projects" onClick={toggleMenu}>projects</Link>
+          <Link to="/journey" onClick={toggleMenu}>my journey</Link>
+          <Link to="/contact" onClick={toggleMenu}>contact</Link>
           {isLoggedIn && (
-            <Link to="/bin/auth/dashboard" onClick={() => { toggleMenu(); }}>dashboard</Link>
+            <Link to="/bin/auth/dashboard" onClick={toggleMenu}>dashboard</Link>
           )}
           
-          {/* Show social icons in mobile menu when active */}
-          {menuOpen && (
-            <div className="mobile-social-icons">
-              <a href="https://www.linkedin.com/in/sarbaz-malek-115027231" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://github.com/Sarbaj" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://wa.me/qr/ZLB7AW7H5CU2K1" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            </div>
-          )}
+          <div className="mobile-social-icons">
+            <a href="https://www.linkedin.com/in/sarbaz-malek-115027231" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/Sarbaj" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://wa.me/qr/ZLB7AW7H5CU2K1" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
 
-          {/* Show profile in mobile menu when active */}
-          {menuOpen && isLoggedIn && (
+          {isLoggedIn && (
             <div className="mobile-profile-section">
               <div className="profile-icon" onClick={toggleProfileMenu}>
                 <FaUser />
@@ -182,32 +152,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-
-      {/* Desktop social icons and profile */}
-      <div className="social-icons desktop-only">
-        <a href="https://www.linkedin.com/in/sarbaz-malek-115027231" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-        <a href="https://github.com/Sarbaj" target="_blank" rel="noopener noreferrer"><FaGithub  /></a>
-        <a href="https://wa.me/qr/ZLB7AW7H5CU2K1" target="_blank" rel="noopener noreferrer"><FaWhatsapp  /></a>
-        
-        {isLoggedIn && (
-          <div className="profile-section">
-            <div className="profile-icon" onClick={toggleProfileMenu}>
-              <FaUser />
-            </div>
-            {showProfileMenu && (
-              <div className="profile-dropdown">
-                <div className="profile-name">
-                  <FaUser /> {adminName}
-                </div>
-                <button className="logout-btn" onClick={handleLogout}>
-                  <FaSignOutAlt /> Logout
-                </button>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-    </nav>
+    </>
   );
 };
 

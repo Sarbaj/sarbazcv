@@ -60,23 +60,25 @@ const App = () => {
     }, [location.pathname]);
 
     return (
-      <div ref={wrapperRef} style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh', overflow: 'hidden' }}>
-        <div ref={scrollRef} style={{ willChange: 'transform' }}>
-          <Navbar/>
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/about' element={<About/>}/>
-            <Route path='/services' element={<Services/>}/>
-            <Route path='/projects' element={<Work/>}/>
-            <Route path='/journey' element={<Journey/>}/>
-            <Route path='/contact' element={<Contact/>}/>
-            <Route path='/bin/auth/dashboard' element={<AddProject/>}/>
-            <Route path='/auth/login' element={<Login/>}/>
-            <Route path='/test-api' element={<TestAPI/>}/>
-          </Routes>
-          <Footer/>
+      <>
+        <Navbar/>
+        <div ref={wrapperRef} style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh', overflow: 'visible', zIndex: 0 }}>
+          <div ref={scrollRef} style={{ willChange: 'transform' }}>
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/about' element={<About/>}/>
+              <Route path='/services' element={<Services/>}/>
+              <Route path='/projects' element={<Work/>}/>
+              <Route path='/journey' element={<Journey/>}/>
+              <Route path='/contact' element={<Contact/>}/>
+              <Route path='/bin/auth/dashboard' element={<AddProject/>}/>
+              <Route path='/auth/login' element={<Login/>}/>
+              <Route path='/test-api' element={<TestAPI/>}/>
+            </Routes>
+            <Footer/>
+          </div>
         </div>
-      </div>
+      </>
     )
 }
 

@@ -7,11 +7,11 @@ const staticProjects = [
   {
     _id: "1",
     number: "01",
-    name: "AI Viva Portal",
-    category: "Education Tech",
-    description: "Ganpat University",
-    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80",
-    link: "#"
+    name: "AAFinance",
+    category: "Financial Services",
+    description: "Loan & Financial Platform",
+    imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&q=80",
+    link: "https://aa-finance.vercel.app/"
   },
   {
     _id: "2",
