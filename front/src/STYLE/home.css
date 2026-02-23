@@ -46,7 +46,7 @@
   background: #1a1a1a;
   color: white;
   padding: 0.8rem 1.5rem;
-  border-radius: 30px;
+  border-radius: 6px;
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -200,6 +200,7 @@
   .homecontainer {
     padding: 0 1rem;
     gap: 1rem;
+    margin-top: 5rem;
   }
 
   .homecontainer p {

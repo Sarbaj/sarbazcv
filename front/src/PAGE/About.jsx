@@ -48,7 +48,11 @@ const About = () => {
         <h1 className="about-title">
           Hi, I'm <span className="highlight">Sarbaz Malek</span>
         </h1>
-        <p className="about-subtitle">Full-Stack Developer & Problem Solver</p>
+        <p className="about-subtitle">Full-Stack MERN Developer with experience delivering 15+ production-ready applications for 
+startups and service-based businesses. Skilled in building scalable architectures, secure REST 
+APIs, and performance-optimized systems. Experienced in developing AI-powered platforms, 
+healthcare management systems, and real-time applications. Passionate about transforming 
+client requirements into reliable, business-driven digital solutions. </p>
       </div>
 
       <div className="about-content-flow">

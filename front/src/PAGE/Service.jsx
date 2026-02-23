@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import '../STYLE/service.css';
+import { FaPalette, FaCode, FaVial } from 'react-icons/fa';
 
 const services = [
   {
     title: "Web Design",
     description: "Modern, clean, and user-focused UI/UX design for websites. Creating stunning visual experiences that captivate users and drive engagement.",
-    icon: "🎨",
+    icon: <FaPalette />,
     number: "01",
   },
   {
     title: "Web Development",
     description: "Responsive, scalable, and robust web apps built with modern tech. Transforming ideas into powerful digital solutions with cutting-edge technologies.",
-    icon: "💻",
+    icon: <FaCode />,
     number: "02",
   },
   {
     title: "Web Testing",
     description: "Automated and manual testing to ensure performance and security. Delivering flawless user experiences through comprehensive quality assurance.",
-    icon: "🧪",
+    icon: <FaVial />,
     number: "03",
   },
 ];
@@ -28,26 +29,22 @@ function Services() {
   return (
     <section className="services-section">
       <div className="services-header">
-        <span className="services-label">What We Do</span>
+        <span className="services-label">WHAT WE DO</span>
         <h2 className="section-title">Our Services</h2>
       </div>
-      <div className="services-container">
+      <div className="services-grid">
         {services.map((service, index) => (
           <div 
-            className={`service-card ${hoveredIndex === index ? 'hovered' : ''}`}
+            className={`service-card-modern ${hoveredIndex === index ? 'hovered' : ''} ${index === 0 ? 'featured' : ''}`}
             key={index}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="service-number">{service.number}</div>
-            <div className="service-content">
-              <div className="service-icon">{service.icon}</div>
-              <div className="service-info">
-                <h3 className="service-title">{service.title}</h3>
-                <p className="service-description">{service.description}</p>
-              </div>
-            </div>
-            <div className="service-arrow">→</div>
+            <div className="service-number-large">{service.number}</div>
+            <div className="service-icon-modern">{service.icon}</div>
+            <h3 className="service-title-modern">{service.title}</h3>
+            <p className="service-description-modern">{service.description}</p>
+            <div className="service-arrow-modern">→</div>
           </div>
         ))}
       </div>
