@@ -44,14 +44,14 @@
 }
 
 .tab-btn:hover {
-  background: #f1efeb;
+  background: white;
   transform: none;
   box-shadow: none;
 }
 
 .tab-btn.active {
   border-bottom-color: #000000;
-  background: #f1efeb;
+  background: white;
 }
 
 /* Projects Container */
@@ -103,7 +103,7 @@
   padding: 40px;
   border: none;
   border-radius: 16px;
-  background: #f1efeb;
+  background: white;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -179,7 +179,7 @@ textarea {
 input[type="file"] {
   padding: 12px;
   border: 2px dashed #000000;
-  background-color: #f1efeb;
+  background-color: white;
   cursor: pointer;
 }
 
@@ -231,7 +231,7 @@ button:active {
 }
 
 .btn-cancel:hover {
-  background: #f1efeb;
+  background: white;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -270,7 +270,7 @@ button:active {
 }
 
 .projects-table tbody tr:hover {
-  background-color: #f1efeb;
+  background-color: white;
 }
 
 .projects-table tbody tr:last-child {
@@ -326,7 +326,7 @@ button:active {
 }
 
 .btn-view:hover {
-  background: #f1efeb;
+  background: white;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -386,7 +386,7 @@ button:active {
   padding: 40px;
   border: none;
   border-radius: 16px;
-  background: #f1efeb;
+  background: white;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -495,7 +495,7 @@ button:active {
   padding: 40px;
   border: none;
   border-radius: 16px;
-  background: #f1efeb;
+  background: white;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -563,7 +563,7 @@ button:active {
 }
 
 .skill-card.highlighted {
-  background: #f1efeb;
+  background: white;
   border-color: #000000;
   border-width: 3px;
 }
@@ -662,7 +662,7 @@ button:active {
 }
 
 .messages-table tbody tr:hover {
-  background-color: #f1efeb;
+  background-color: white;
 }
 
 .messages-table tbody tr:last-child {
@@ -724,7 +724,7 @@ button:active {
   font-weight: 600;
   transition: all 0.2s ease;
   margin: 0;
-  background: #f1efeb;
+  background: white;
   color: #000000;
   align-self: flex-start;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);

@@ -93,6 +93,7 @@ const Navbar = () => {
         <Link to="/about" onClick={() => setMenuOpen(false)}>about</Link>
         <Link to="/services" onClick={() => setMenuOpen(false)}>services</Link>
         <Link to="/projects" onClick={() => setMenuOpen(false)}>projects</Link>
+        <Link to="/journey" onClick={() => setMenuOpen(false)}>my journey</Link>
         <Link to="/contact" onClick={() => setMenuOpen(false)}>contact</Link>
         {isLoggedIn && (
           <Link to="/bin/auth/dashboard" onClick={() => setMenuOpen(false)}>dashboard</Link>

@@ -34,15 +34,18 @@ const Home = () => {
     <>
       <div className="homecontainer">
         <h1 ref={headingRef}>
-          Making <span>Complex </span>Web Apps<br></br> Feel Simple 🤝
+          Building <span>Production-Grade</span> Web & AI Systems That Scale
         </h1>
         <p>
-          Hi, I'm Sarbaz Malek, a MERN Stack Developer based in Mehsana,Gujrat
-          India.<br></br>
-          With a passion for building efficient and user-friendly web
-          applications, <br></br> I create seamless digital experiences that are
-          functional, scalable, and impactful.
+          Hi, I'm Sarbaz Malek — Full-Stack MERN Developer specializing in scalable architectures, AI-powered platforms, and secure real-time systems.
         </p>
+        <div className="impact-badges">
+          <span className="badge">🏆 15+ Production Applications Delivered</span>
+        </div>
+        <div className="cta-buttons">
+          <a href="https://drive.google.com/file/d/1rCkxFa9mdNH-8Z5iCiuvBQcPU2LkOEZR/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn-primary">View Resume</a>
+          <a href="/contact" className="btn-secondary">Hire Me</a>
+        </div>
       </div>
       <div className="marquee-container">
         <div className="marquee">
@@ -66,8 +69,8 @@ const Home = () => {
       </div>
 
       <About />
-      <Services />
       <Work />
+      <Services />
       <Contact />
       
     </>

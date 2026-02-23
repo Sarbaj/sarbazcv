@@ -92,6 +92,7 @@ const Contact = () => {
               <input
                 type="text"
                 id="name"
+                placeholder="Enter your name"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 onFocus={() => setIsFocused({ ...isFocused, name: true })}
@@ -105,6 +106,7 @@ const Contact = () => {
               <input
                 type="email"
                 id="email"
+                placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 onFocus={() => setIsFocused({ ...isFocused, email: true })}
@@ -118,6 +120,7 @@ const Contact = () => {
               <textarea
                 id="message"
                 rows="6"
+                placeholder="Enter your message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onFocus={() => setIsFocused({ ...isFocused, message: true })}

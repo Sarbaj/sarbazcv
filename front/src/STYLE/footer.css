@@ -111,7 +111,7 @@
 }
 
 .footer-social a:hover {
-  background: #f1efeb;
+  background: white;
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
 }
