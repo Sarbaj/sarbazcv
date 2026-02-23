@@ -98,34 +98,29 @@ const Work = () => {
         <h1 className="work-title">Selected Work</h1>
       </div>
 
-      <div className="projects-grid">
-        {projectData.map((project, index) => (
-          <div
-            key={project._id}
-            className={`project-column ${hoveredIndex === index ? 'hovered' : ''} ${hoveredIndex !== null && hoveredIndex !== index ? 'dimmed' : ''}`}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            onClick={() => handleProjectClick(project)}
-          >
-            <div className="project-image-wrapper">
-              <img 
-                src={project.imageUrl} 
-                alt={project.name}
-                className="project-image"
-              />
-            </div>
-            
-            <div className="project-number">{project.number}</div>
-            
-            <div className="project-info">
-              <h3 className="project-name">{project.name}</h3>
-              <p className="project-category">{project.category}</p>
-              <span className="project-arrow">
-                <FaArrowRight />
-              </span>
-            </div>
-          </div>
-        ))}
+                  <div className="project-content">
+                    <h2>{data.name}</h2>
+                    <p>{data.description}</p>
+                    <a
+                      onClick={(e) => Handleproject(e, i, data)}
+                      className="project-link-btn"
+                    >
+                      Live Demo <FaLink />
+                    </a>
+                    <div className="btn-info">
+                      {trimmedArray.length > 0 &&
+                        trimmedArray.map((data, i) => {
+                          return <button key={i}>{data}</button>;
+                        })}
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <div></div>
+          )}
+        </div>
       </div>
     </div>
   );
