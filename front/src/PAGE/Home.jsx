@@ -3,6 +3,7 @@ import "../STYLE/home.css";
 import Work from "./Work";
 import Contact from "./Contact";
 import About from "./About";
+import AnimatedText from "./AnimatedText";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -68,6 +69,7 @@ const Home = () => {
         </div>
       </div>
 
+      <AnimatedText />
       <About />
       <Work />
       <Services />

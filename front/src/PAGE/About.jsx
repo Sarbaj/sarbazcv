@@ -1,6 +1,6 @@
 import React from 'react'
 import '../STYLE/about.css';
-import { FaBriefcase, FaPalette, FaTools, FaCog, FaShoppingCart, FaUniversity, FaChartLine, FaMedal, FaCheckCircle, FaCode, FaDatabase, FaShieldAlt, FaShopify, FaRobot, FaStar } from 'react-icons/fa';
+import { FaBriefcase, FaUniversity, FaChartLine, FaMedal, FaCheckCircle } from 'react-icons/fa';
 
 // Static skills data - Numbered list format
 const staticSkills = [
@@ -43,22 +43,7 @@ const About = () => {
 
   return (
     <div className="about-container">
-      <div className="about-hero">
-        <span className="about-label">Introduction</span>
-        <h1 className="about-title">
-          Hi, I'm <span className="highlight">Sarbaz Malek</span>
-        </h1>
-        <p className="about-subtitle">Full-Stack MERN Developer with experience delivering 15+ production-ready applications for 
-startups and service-based businesses. Skilled in building scalable architectures, secure REST 
-APIs, and performance-optimized systems. Experienced in developing AI-powered platforms, 
-healthcare management systems, and real-time applications. Passionate about transforming 
-client requirements into reliable, business-driven digital solutions. </p>
-      </div>
-
       <div className="about-content-flow">
-        {/* My Journey Section */}
-    
-
         {/* Experience Section */}
         <div className="section-content">
           <h2 className="section-heading-exp">Professional Experience</h2>
@@ -143,7 +128,7 @@ client requirements into reliable, business-driven digital solutions. </p>
           </div>
         </div>
 
-        {/* Selected Work Section */}
+        {/* Skills Section */}
         <div className="section-content skills-section-wrapper">
           <div className="skills-header-center">
             <span className="skills-label-center">TECH STACK</span>
