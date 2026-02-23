@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../STYLE/work.css";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -20,7 +20,7 @@ const staticProjects = [
     category: "Financial Services",
     description: "Professional Platform",
     imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80",
-    link: "#"
+    link: "https://wvomb.com/"
   },
   {
     _id: "3",
@@ -29,7 +29,7 @@ const staticProjects = [
     category: "E-Commerce",
     description: "Scalable Platform",
     imageUrl: "https://images.unsplash.com/photo-1661956602116-aa6865609028?w=1200&q=80",
-    link: "#"
+    link: "https://homeearns.vercel.app/"
   },
   {
     _id: "4",
@@ -38,56 +38,56 @@ const staticProjects = [
     category: "Healthcare AI",
     description: "Award Winning",
     imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80",
-    link: "#"
+    link: "https://medi-sure.vercel.app/"
   }
 ];
 
 const Work = () => {
-  const [projectData, setProjectData] = useState([]);
+  const [projectData] = useState(staticProjects); // Using static data only
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const FetchProduct = async () => {
-    try {
-      const response = await fetch(
-        "https://sarbazcvbackend.vercel.app/bin/getproject",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      const data = await response.json();
+  // API call commented out - using static data only
+  // const FetchProduct = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       "https://sarbazcvbackend.vercel.app/bin/getproject",
+  //       {
+  //         method: "GET",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       }
+  //     );
+  //     const data = await response.json();
 
-      if (data.messege && data.messege.length > 0) {
-        // Map backend data to match our structure
-        const mappedData = data.messege.slice(0, 4).map((project, index) => ({
-          _id: project._id,
-          number: `0${index + 1}`,
-          name: project.name,
-          category: project.speciality?.split(",")[0] || "Project",
-          description: project.description?.substring(0, 50) || "",
-          imageUrl: project.imageUrl,
-          link: project.link
-        }));
-        setProjectData(mappedData);
-      } else {
-        setProjectData(staticProjects);
-      }
-    } catch (err) {
-      setProjectData(staticProjects);
-    }
-  };
+  //     if (data.messege && data.messege.length > 0) {
+  //       const mappedData = data.messege.slice(0, 4).map((project, index) => ({
+  //         _id: project._id,
+  //         number: `0${index + 1}`,
+  //         name: project.name,
+  //         category: project.speciality?.split(",")[0] || "Project",
+  //         description: project.description?.substring(0, 50) || "",
+  //         imageUrl: project.imageUrl,
+  //         link: project.link
+  //       }));
+  //       setProjectData(mappedData);
+  //     } else {
+  //       setProjectData(staticProjects);
+  //     }
+  //   } catch (err) {
+  //     setProjectData(staticProjects);
+  //   }
+  // };
 
-  useEffect(() => {
-    FetchProduct();
-  }, []);
+  // useEffect(() => {
+  //   FetchProduct();
+  // }, []);
 
   const handleProjectClick = (project) => {
     if (project.link === "#") {
-      alert("Project details available upon request. Contact me for more information.");
+      alert("Project is under maintenance.");
     } else {
-      window.location.href = project.link;
+      window.open(project.link, '_blank');
     }
   };
 

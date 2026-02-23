@@ -106,9 +106,9 @@ const About = () => {
               <div className="project-card-new">
                 <div className="project-number-new">04</div>
                 <div className="project-icon-new blue"><FaBriefcase /></div>
-                <h5 className="project-title-new">WOMB Advisers – Financial Services</h5>
+                <h5 className="project-title-new">MediSure – AI-Powered Healthcare Management Platform</h5>
                 <p className="project-desc-new">
-                  Developed a professional startup offering ERP solutions
+                  Designed and developed a full-stack healthcare management system integrating AI driven drug safety detection
                 </p>
               </div>
 

@@ -18,27 +18,33 @@ const Contact = () => {
       toast.error("All Fields Are Required");
       return;
     }
-    const response = await fetch(
-      "https://sarbazcvbackend.vercel.app/bin/contact",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: username,
-          email: email,
-          messege: message,
-        }),
-      }
-    );
-    if (response.status == 201) {
-      toast.success("Thanks For Connecting.");
-    }
-    if (!response.ok) {
-      const errorData = await response.json();
-      toast.error(errorData.message);
-    }
+    
+    // API call commented out - using static response only
+    // const response = await fetch(
+    //   "https://sarbazcvbackend.vercel.app/bin/contact",
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       name: username,
+    //       email: email,
+    //       messege: message,
+    //     }),
+    //   }
+    // );
+    // if (response.status == 201) {
+    //   toast.success("Thanks For Connecting.");
+    // }
+    // if (!response.ok) {
+    //   const errorData = await response.json();
+    //   toast.error(errorData.message);
+    // }
+    
+    // Static response
+    toast.success("Thanks For Connecting. Your message has been received!");
+    
     setEmail("");
     setMessage("");
     setUsername("");

@@ -33,29 +33,29 @@ const Navbar = () => {
       }
     );
 
-    // Check if user is logged in
-    const checkAuth = async () => {
-      const token = localStorage.getItem("cvToken");
-      if (token) {
-        try {
-          const response = await fetch("https://sarbazcvbackend.vercel.app/bin/getUsername", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ token }),
-          });
-          const data = await response.json();
-          if (response.status === 200 && data.payload) {
-            setIsLoggedIn(true);
-            setAdminName(data.payload.name || 'Admin');
-          }
-        } catch (error) {
-          console.error('Auth check error:', error);
-        }
-      }
-    };
-    checkAuth();
+    // API call commented out - using static auth check only
+    // const checkAuth = async () => {
+    //   const token = localStorage.getItem("cvToken");
+    //   if (token) {
+    //     try {
+    //       const response = await fetch("https://sarbazcvbackend.vercel.app/bin/getUsername", {
+    //         method: "POST",
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({ token }),
+    //       });
+    //       const data = await response.json();
+    //       if (response.status === 200 && data.payload) {
+    //         setIsLoggedIn(true);
+    //         setAdminName(data.payload.name || 'Admin');
+    //       }
+    //     } catch (error) {
+    //       console.error('Auth check error:', error);
+    //     }
+    //   }
+    // };
+    // checkAuth();
   }, []);
 
   const toggleMenu = () => {

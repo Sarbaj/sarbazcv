@@ -6,35 +6,33 @@ const Login = () => {
       const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
+    // API call commented out - login disabled for static site
     async function Sendlogin(email, password) {
-    try {
-        const response = await fetch('https://sarbazcvbackend.vercel.app/bin/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        });
+    // try {
+    //     const response = await fetch('https://sarbazcvbackend.vercel.app/bin/login', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ email, password })
+    //     });
 
-        if (!response.ok) {
-            const errorData = await response.json();
-            toast.error(errorData.message)
-            throw new Error(errorData.message || 'Login failed');
-            
-        }
+    //     if (!response.ok) {
+    //         const errorData = await response.json();
+    //         toast.error(errorData.message)
+    //         throw new Error(errorData.message || 'Login failed');
+    //     }
 
-        const data = await response.json();
-
-        // Store the token in sessionStorage
-        localStorage.setItem('authToken', data.token);
-        localStorage.setItem("cvToken",data.token)
-        // Redirect to the dashboard
-        window.location.href = '/bin/auth/dashboard'; // Navigate to dashboard after login
-
-    } catch (error) {
-        console.error('Error during login:', error);
-       
-    }
+    //     const data = await response.json();
+    //     localStorage.setItem('authToken', data.token);
+    //     localStorage.setItem("cvToken",data.token)
+    //     window.location.href = '/bin/auth/dashboard';
+    // } catch (error) {
+    //     console.error('Error during login:', error);
+    // }
+    
+    // Static response
+    toast.info("Login is disabled for this static portfolio site.");
 }
 
   return (
