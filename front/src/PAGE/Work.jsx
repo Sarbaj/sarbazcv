@@ -16,11 +16,11 @@ const staticProjects = [
   {
     _id: "2",
     number: "02",
-    name: "WVOMB Advisers",
-    category: "Financial Services",
-    description: "Professional Platform",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80",
-    link: "https://wvomb.com/"
+    name: "NozzlePro",
+    category: "Industrial Manufacturing",
+    description: "Spray Nozzle Manufacturer",
+    imageUrl: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&q=80",
+    link: "https://nozzle-pro.com/"
   },
   {
     _id: "3",
@@ -33,12 +33,12 @@ const staticProjects = [
   },
   {
     _id: "4",
-    number: "04",
-    name: "MediSure",
-    category: "Healthcare AI",
-    description: "Award Winning",
-    imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80",
-    link: "https://medi-sure.vercel.app/"
+     number: "04",
+    name: "WVOMB Advisers",
+    category: "Financial Services",
+    description: "Professional Platform",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80",
+    link: "https://wvomb.com/"
   }
 ];
 
