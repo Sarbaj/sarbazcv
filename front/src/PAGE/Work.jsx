@@ -25,11 +25,11 @@ const staticProjects = [
   {
     _id: "3",
     number: "03",
-    name: "B2B E-Commerce",
-    category: "E-Commerce",
-    description: "Scalable Platform",
-    imageUrl: "https://images.unsplash.com/photo-1661956602116-aa6865609028?w=1200&q=80",
-    link: "https://homeearns.vercel.app/"
+    name: "Tirth Photography",
+    category: "Media Production",
+    description: "Premium Photography & Video",
+    imageUrl: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80",
+    link: "https://tirthphotography.in/"
   },
   {
     _id: "4",
