@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import '../STYLE/service.css';
-import { FaPalette, FaCode, FaVial } from 'react-icons/fa';
+import { FaPalette, FaCode, FaVideo } from 'react-icons/fa';
 
 const services = [
   {
-    title: "Corporate Shoot",
+    title: "Web/App Development",
     description: "Professional photography that elevates your brand — executive portraits, office ambience, team candids, and product visuals styled with premium lighting. Ideal for websites, profiles, brochures, and social media branding.",
-    icon: <FaPalette />,
+    icon: <FaCode />,
     number: "01",
   },
   {
-    title: "Professional Reels",
+    title: "Graphic Design",
     description: "We Provide Professional Reels with best resolution and professional edit. Premium media production services using the best industry tools like Adobe Premiere Pro and Photoshop.",
-    icon: <FaCode />,
+    icon: <FaPalette />,
     number: "02",
   },
   {
-    title: "Advertisement",
+    title: "Video Editing",
     description: "Creative ad photography & video that sells your story — bold visuals, product highlights, and cinematic concepts crafted to boost brand engagement across digital and print platforms.",
-    icon: <FaVial />,
+    icon: <FaVideo />,
     number: "03",
   },
 ];
