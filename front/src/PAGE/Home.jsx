@@ -44,7 +44,7 @@ const Home = () => {
           <span className="badge">🏆 15+ Production Applications Delivered</span>
         </div>
         <div className="cta-buttons">
-          <a href="https://drive.google.com/file/d/1rCkxFa9mdNH-8Z5iCiuvBQcPU2LkOEZR/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn-primary">View Resume</a>
+          <a href="https://drive.google.com/file/d/1zawqrrxdMDlzf3Z6ZxUEvp6w9xJzkLzV/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn-primary">View Resume</a>
           <a href="/contact" className="btn-secondary">Hire Me</a>
         </div>
       </div>
